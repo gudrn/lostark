@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const lostarkConfig = {
   lostarkapikey: process.env.LOSTARK_API_KEY,
