@@ -153,7 +153,7 @@ destroy@1.2.0:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
   integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
 
-dotenv@^16.4.5:
+dotenv@^16.5.0:
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.5.0.tgz#092b49f25f808f020050051d1ff258e404c78692"
   integrity sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==
@@ -527,6 +527,11 @@ qs@6.13.0:
   integrity sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==
   dependencies:
     side-channel "^1.0.6"
+
+radis@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/radis/-/radis-2.0.0.tgz#d1478d276935e80c894959b1572eb1eede0c4e68"
+  integrity sha512-GOOtEO6u2jcuI/mQcatLQ1Ge79nHVMD3hRpdi2noi8Cj66XOzVbk73PWMKZMv5qEghg3Y7oRwx5stot7z+9gJA==
 
 range-parser@~1.2.1:
   version "1.2.1"
