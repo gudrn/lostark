@@ -1,6 +1,6 @@
 // 에러 핸들링 미들웨어 구현
 
-export const errorMiddleware = (err, req, res, next) => {
+export const errorMiddleware = (err, res) => {
   console.error(err);
 
   // res가 정의되지 않은 경우를 대비한 방어 코드 추가

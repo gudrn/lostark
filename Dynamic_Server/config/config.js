@@ -6,4 +6,9 @@ export const lostarkConfig = {
   lostarkapiurl: process.env.LOSTARK_API_URL,
 };
 
+export const redisConfig = {
+  redisHost: process.env.REDIS_HOST,
+  redisPort: process.env.REDIS_PORT,
+};
+
 const mongoConfig = {};

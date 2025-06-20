@@ -1,14 +1,12 @@
 import express from 'express';
 import { getCharacters } from './service/characterService.js';
+import { connectRedis } from './redis/redosClient.js';
 const app = express();
 
+connectRedis();
 app.get('/characterName=:characterName', async (req, res) => {
   const characterName = req.params.characterName;
-  const character = await getCharacters(characterName);
-  if (!character) {
-    return res.status(404).json({ error: '캐릭터를 찾을 수 없습니다.' });
-  }
-  res.json(character);
+  await getCharacters(characterName, res);
 });
 
 app.listen(3000, () => {

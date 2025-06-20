@@ -11,8 +11,16 @@ import {
   mapPassive,
 } from './mappers/characterMappers.js';
 import { errorMiddleware } from '../middware/errormiddware.js';
+import { characterGetCache, characterSetCache } from '../redis/redosClient.js';
 
-export const getCharacters = async (characterName) => {
+export const getCharacters = async (characterName, res) => {
+  const cacheData = await characterGetCache(characterName);
+
+  if (cacheData) {
+    res.json({ key: characterName, value: cacheData });
+    return;
+  }
+
   let response;
   try {
     response = await fetch(
@@ -26,12 +34,14 @@ export const getCharacters = async (characterName) => {
       },
     );
   } catch (error) {
-    errorMiddleware(new Error('캐릭터 정보를 불러오는 중 오류 발생'));
+    errorMiddleware(new Error('캐릭터 정보를 불러오는 중 오류 발생'), res);
+    return;
   }
 
   let result = await response.json();
   if (!result) {
-    return null;
+    res.status(404).json({ error: '캐릭터를 찾을 수 없습니다.' });
+    return;
   }
 
   let character = {
@@ -60,5 +70,7 @@ export const getCharacters = async (characterName) => {
     ArkPassive: mapPassive(result.ArkPassive),
   };
 
-  return character;
+  await characterSetCache(characterName, character, 300);
+
+  res.json({ key: characterName, value: character });
 };
