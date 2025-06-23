@@ -11,17 +11,6 @@ export const connectRedis = async () => {
   await redisClient.connect();
 };
 
-//test용용
-export async function getCache(key) {
-  const data = await redisClient.get(key);
-  return data ? JSON.parse(data) : null;
-}
-
-//test용
-export async function setCache(key, value, ttl) {
-  await redisClient.set(key, JSON.stringify(value), { EX: ttl });
-}
-
 export class redisCache{
   constructor (client, prefix = ''){
     this.client = client
@@ -41,4 +30,17 @@ export class redisCache{
     await this.client.set(this.getKey(key), JSON.stringify(value), { EX: ttl });
   }
 
+}
+
+
+
+//test용용
+export async function getCache(key) {
+  const data = await redisClient.get(key);
+  return data ? JSON.parse(data) : null;
+}
+
+//test용
+export async function setCache(key, value, ttl) {
+  await redisClient.set(key, JSON.stringify(value), { EX: ttl });
 }
