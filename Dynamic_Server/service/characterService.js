@@ -9,7 +9,7 @@ import {
   mapCardEffects,
   mapGems,
   mapPassive,
-} from './mappers/characterMappers.js';
+} from './mappers/characterFormatter.js';
 import { errorMiddleware } from '../middware/errormiddware.js';
 import { characterGetCache, characterSetCache } from '../redis/redosClient.js';
 
