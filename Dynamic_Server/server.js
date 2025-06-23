@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCharacters } from './service/characterService.js';
+import { getCharacters } from './routers/characterController.js';
 import { connectRedis } from './redis/redosClient.js';
 const app = express();
 
