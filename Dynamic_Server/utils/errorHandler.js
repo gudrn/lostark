@@ -1,6 +1,6 @@
 // 에러 핸들링 미들웨어 구현
 
-export const errorMiddleware = (err, res) => {
+export const errorHandler = (err, res) => {
   console.error(err);
 
   // 기본 에러 메시지와 상태코드 설정

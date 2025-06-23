@@ -1,5 +1,5 @@
 import { fetchCharacterFromAPI, formatCharacterData } from '../services/characterService.js';
-import { errorMiddleware } from '../utils/errorHandler.js';
+import { errorHandler } from '../utils/errorHandler.js';
 import { characterCache } from '../redis/cacheInstances.js';
 
 export const getCharacters = async (characterName, res) => {
@@ -31,6 +31,6 @@ export const getCharacters = async (characterName, res) => {
     return res.json({ key: characterName, value: character });
   } catch (error) {
     // 에러 미들웨어에서 처리 (원본 error 전달)
-    return errorMiddleware(error, res);
+    return errorHandler(error, res);
   }
 };
