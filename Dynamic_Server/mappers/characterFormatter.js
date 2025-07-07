@@ -117,3 +117,32 @@ export const mapPassive = (passive) =>
         })),
       }
     : { points: [], effects: [] };
+
+// 캐릭터 데이터를 포맷팅하는 함수
+export function formatCharacterData(result) {
+  return {
+    charaterimage: result.ArmoryProfile.CharacterImage,
+    expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
+    pvpGradeName: result.ArmoryProfile.PvpGradeName,
+    townLevel: result.ArmoryProfile.TownLevel,
+    townName: result.ArmoryProfile.TownName,
+    title: result.ArmoryProfile.Title,
+    guildName: result.ArmoryProfile.GuildName,
+    usingSkillPoint: result.ArmoryProfile.UsingSkillPoint,
+    totalSkillPoint: result.ArmoryProfile.TotalSkillPoint,
+    stats: mapStats(result.ArmoryProfile.Stats),
+    serverName: result.ArmoryProfile.Server,
+    characterName: result.ArmoryProfile.Name,
+    characterLevel: result.ArmoryProfile.Level,
+    characterClassName: result.ArmoryProfile.ClassName,
+    itemMaxLevel: result.ArmoryProfile.ItemMaxLevel,
+    armoryEquipment: mapEquipmentDetail(result.ArmoryEquipment),
+    armoryAvatars: mapAvatars(result.ArmoryAvatars),
+    armorySkills: mapSkills(result.ArmorySkills),
+    armoryEngraving: mapEngraving(result.ArmoryEngraving),
+    armoryCard: mapCardDetail(result.ArmoryCard),
+    armoryCardEffects: mapCardEffects(result.ArmoryCard),
+    armoryGem: mapGems(result.ArmoryGem),
+    ArkPassive: mapPassive(result.ArkPassive),
+  };
+}

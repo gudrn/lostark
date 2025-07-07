@@ -4,7 +4,4 @@ import { redisClient, redisCache } from './redisClient.js';
 const characterCache = new redisCache(redisClient, 'character');
 const marketCache = new redisCache(redisClient, 'market');
 
-export {
-  characterCache,
-  marketCache
-};
+export { characterCache, marketCache };

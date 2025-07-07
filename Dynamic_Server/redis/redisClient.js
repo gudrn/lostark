@@ -11,7 +11,7 @@ export const connectRedis = async () => {
   await redisClient.connect();
 };
 
-export class RedisCache {
+export class redisCache {
   constructor(client, prefix = '') {
     this.client = client;
     this.prefix = prefix;
@@ -39,9 +39,6 @@ export class RedisCache {
     }
   }
 }
-
-
-
 
 //test용용
 export async function getCache(key) {

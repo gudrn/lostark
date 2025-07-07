@@ -1,6 +1,6 @@
-import { fetchCharacterFromAPI, formatCharacterData } from '../services/characterService.js';
-import { errorHandler } from '../utils/errorHandler.js';
-import { characterCache } from '../redis/cacheInstances.js';
+import { fetchCharacterFromApi } from '../model/characterModel.js';
+import { characterCache } from '../redis/instances.js';
+import { formatCharacterData } from '../mappers/characterFormatter.js';
 
 export const getCharacters = async (characterName, res) => {
   try {
@@ -16,7 +16,7 @@ export const getCharacters = async (characterName, res) => {
     }
 
     // 2. 외부 API에서 데이터 가져오기
-    const result = await fetchCharacterFromAPI(characterName);
+    const result = await fetchCharacterFromApi(characterName);
 
     // 3. 존재하지 않거나 잘못된 응답
     if (!result || !result.ArmoryProfile) {
@@ -30,7 +30,6 @@ export const getCharacters = async (characterName, res) => {
     // 5. 최종 응답
     return res.json({ key: characterName, value: character });
   } catch (error) {
-    // 에러 미들웨어에서 처리 (원본 error 전달)
-    return errorHandler(error, res);
+    throw new Error(error);
   }
 };
