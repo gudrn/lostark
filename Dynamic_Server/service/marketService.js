@@ -28,5 +28,6 @@ const MarketTierforceproductfromapi = async () => {
     const items = await fetchenTierforceproductfromapi(3, page);
     tier3itemlist.push(...mapMarketforceItem(items));
   }
+
   return { tier4itemlist, tier3itemlist };
 };
