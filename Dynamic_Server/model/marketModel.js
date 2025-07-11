@@ -1,4 +1,5 @@
-import { lostarkConfig, marketCode } from '../config/config';
+import { lostarkConfig } from '../config/config';
+import { marketCode } from '../constants/categoryCodes';
 
 // 유물 각인서 아이템 페이지를 가져오는 함수
 export const fetchRelicMarketPage = async (page) => {
@@ -21,12 +22,19 @@ export const fetchRelicMarketPage = async (page) => {
 };
 
 //강화 재료 아이템 페이지를 가져오는 함수
-export const fetchenforceproductfromapi = async () => {
+export const fetchenTierforceproductfromapi = async (tier, page) => {
   const response = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
     },
+    body: JSON.stringify({
+      Sort: 'GRADE',
+      CategoryCode: marketCode.reinforce,
+      itemTier: tier,
+      PageNo: page,
+      SortCondition: 'DESC',
+    }),
   });
 };

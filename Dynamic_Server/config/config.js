@@ -11,7 +11,4 @@ export const redisConfig = {
   redisPort: process.env.REDIS_PORT,
 };
 
-export const marketCode = {
-  relic: 40000,
-};
 const mongoConfig = {};
