@@ -93,30 +93,22 @@ export const mapGems = (gem) =>
   gem && gem.Gems
     ? gem.Gems.map((gem) => ({
         type: gem.Type,
-        name: gem.Name,
+        name: gem.Name.replace(/<[^>]*>/g, '').trim(),
         icon: gem.Icon,
         grade: gem.Grade,
-        tooltip: gem.Tooltip,
       }))
     : [];
 
 // 패시브 정보 매핑
 export const mapPassive = (passive) =>
-  passive && passive.Points && passive.Effects
+  passive && passive.Points
     ? {
         points: passive.Points.map((point) => ({
           name: point.Name,
           value: point.Value,
-          tooltip: point.Tooltip,
-        })),
-        effects: passive.Effects.map((effect) => ({
-          name: effect.Name,
-          description: effect.Description,
-          icon: effect.Icon,
-          tooltip: effect.ToolTip,
         })),
       }
-    : { points: [], effects: [] };
+    : { points: [] };
 
 // 캐릭터 데이터를 포맷팅하는 함수
 export function formatCharacterData(result) {

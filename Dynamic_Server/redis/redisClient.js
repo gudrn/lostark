@@ -23,8 +23,14 @@ export class redisCache {
 
   async get(key) {
     try {
-      const raw = await this.client.get(this.getKey(key));
-      return raw ? JSON.parse(raw) : null;
+      const fullKey = this.getKey(key);
+      const [raw, ttl] = await Promise.all([this.client.get(fullKey), this.client.ttl(fullKey)]);
+      if (!raw) return null;
+      // ttl이 10초 이하이면 만료된 것으로 간주 (Redis에서 -2는 키 없음, -1은 만료 없음)
+      if (ttl <= 10 || ttl === -2) {
+        return null;
+      }
+      return JSON.parse(raw);
     } catch (error) {
       console.error(`[RedisCache:get] Error with key "${key}":`, error);
       return null;
