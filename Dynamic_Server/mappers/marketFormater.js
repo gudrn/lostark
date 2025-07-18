@@ -13,3 +13,11 @@ export function mapMarketforceItem(data) {
     recentprice: item.RecentPrice,
   }));
 }
+
+// 보석 아이템 배열에서 Name, BuyPrice만 추출하는 함수
+export function mapMarketgem(data){
+  return {
+    Name : data.Items[0].Name,
+    BuyPrice : data.Items[0].AuctionInfo.BuyPrice,
+  }
+}

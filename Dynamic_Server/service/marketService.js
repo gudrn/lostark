@@ -2,7 +2,7 @@ import { fetchRelicMarketPage, fetchenTierforceproductfromapi } from '../model/m
 import { mapMarketItem, mapMarketforceItem } from '../mappers/marketFormater';
 
 //유물 아이템 데이터를 가져오는 함수
-const Marketrelicsitemfromapi = async () => {
+const marketRelicsItemFromApi = async () => {
   try {
     // 1페이지부터 4페이지까지의 결과를 모두 가져옵니다.
     const allResults = [];
@@ -19,7 +19,7 @@ const Marketrelicsitemfromapi = async () => {
 };
 
 //티어 재료 아이템 데이터를 가져오는 함수
-const MarketTierforceproductfromapi = async () => {
+const marketTierForceproductFromApi = async () => {
   const tier4items = await fetchenTierforceproductfromapi(4, 1);
   const tier4itemlist = mapMarketforceItem(tier4items);
   const tier3items = await fetchenTierforceproductfromapi(3, 1);
@@ -31,3 +31,5 @@ const MarketTierforceproductfromapi = async () => {
 
   return { tier4itemlist, tier3itemlist };
 };
+
+const marketGemItemFromApi = async

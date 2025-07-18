@@ -1,5 +1,5 @@
 import { lostarkConfig } from '../config/config';
-import { marketCode } from '../constants/categoryCodes';
+import { marketCode } from '../constants/data';
 
 // 유물 각인서 아이템 페이지를 가져오는 함수
 export const fetchRelicMarketPage = async (page) => {
@@ -11,7 +11,7 @@ export const fetchRelicMarketPage = async (page) => {
     },
     body: JSON.stringify({
       Sort: 'CURRENT_MIN_PRICE',
-      CategoryCode: marketCode.relic,
+      CategoryCode: marketCode.relicAll,
       ItemGrade: '유물',
       PageNo: page,
       SortCondition: 'DESC',
@@ -38,3 +38,29 @@ export const fetchenTierforceproductfromapi = async (tier, page) => {
     }),
   });
 };
+
+//보석 아이템 페이지를 가져오는 함수
+export const fetchenGemstonefromapi = async (itemarr)=>{
+  const response = await fetch(`${lostarkConfig.lostarkapiurl}/actions/items`,{
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+      Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+    },
+    body:JSON.stringify({
+      "ItemLevelMin": 0,
+      "ItemLevelMax": 0,
+      "ItemGradeQuality": null,
+      "ItemUpgradeLevel": null,
+      "ItemTradeAllowCount": null,
+      "Sort": "BUY_PRICE",
+      "CategoryCode": marketCode.gem,
+      "ItemTier": itemarr[0],
+      "ItemGrade": "",
+      "ItemName": "5레",
+      "PageNo": 0,
+      "SortCondition": "ASC"
+    })
+  })
+}
+

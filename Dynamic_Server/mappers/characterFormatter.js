@@ -30,20 +30,7 @@ export const mapAvatars = (avatars) =>
     grade: avatar.Grade,
   })) ?? [];
 
-// 스킬 정보 매핑
-export const mapSkills = (skills) =>
-  skills?.map((skill) => ({
-    name: skill.Name,
-    icon: skill.Icon,
-    level: skill.Level,
-    type: skill.Type,
-    skillType: skill.SkillType,
-    tripods: skill.Tripods,
-    rune: skill.Rune,
-    tooltip: skill.Tooltip,
-  })) ?? [];
-
-// 문장 정보 매핑
+// 각인 정보 매핑
 export const mapEngraving = (engraving) =>
   engraving && engraving.ArkPassiveEffects
     ? engraving.ArkPassiveEffects.map((effect) => ({
@@ -130,7 +117,6 @@ export function formatCharacterData(result) {
     itemMaxLevel: result.ArmoryProfile.ItemMaxLevel,
     armoryEquipment: mapEquipmentDetail(result.ArmoryEquipment),
     armoryAvatars: mapAvatars(result.ArmoryAvatars),
-    armorySkills: mapSkills(result.ArmorySkills),
     armoryEngraving: mapEngraving(result.ArmoryEngraving),
     armoryCard: mapCardDetail(result.ArmoryCard),
     armoryCardEffects: mapCardEffects(result.ArmoryCard),
