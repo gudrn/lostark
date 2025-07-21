@@ -29,7 +29,7 @@ export const fnGetCharacters = async (str_characterName, res) => {
     await characterCache.set(str_characterName, character, 300); // 5분 TTL
 
     // 5. 최종 응답
-    return res.json({ key: str_characterName, value: character });
+    return res.json({ characterName: str_characterName, data: character });
   } catch (error) {
     throw new Error(error);
   }
