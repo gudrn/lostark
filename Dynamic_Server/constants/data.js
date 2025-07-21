@@ -49,7 +49,7 @@ export const marketCode = {
   gemBox: 220000, // 보석 상자
 };
 
-export const gemstone = [
+export const gemstones = [
   {
     "tier": 4,
     "grade": "유물",

@@ -22,3 +22,10 @@ export const getTierforceItems = async (res) => {
   await marketCache.set('tierforceitems', marketItem, 3600);
   res.status(200).json(marketItem);
 };
+
+export const getGemItems = async(res)=>{
+  const cachData = await marketCache.get('gem');
+  if(cachData){
+    return cachData;
+  }
+}
