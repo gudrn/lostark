@@ -1,21 +1,10 @@
 import { lostarkConfig } from '../config/config.js';
-import {
-  mapStats,
-  mapEquipmentDetail,
-  mapAvatars,
-  mapSkills,
-  mapEngraving,
-  mapCardDetail,
-  mapCardEffects,
-  mapGems,
-  mapPassive,
-} from '../mappers/characterFormatter.js';
 
-// 캐릭터 정보를 API에서 가져오는 함수
-export async function fetchCharacterFromApi(characterName) {
+// 캐릭터 정보를 API에서 가져오는 함수 (헝가리안 표기법 적용)
+export async function fnFetchCharacterFromApi(strCharacterName) {
   try {
-    const response = await fetch(
-      `${lostarkConfig.lostarkapiurl}/armories/characters/${encodeURIComponent(characterName)}`,
+    const objResponse = await fetch(
+      `${lostarkConfig.lostarkapiurl}/armories/characters/${encodeURIComponent(strCharacterName)}`,
       {
         method: 'GET',
         headers: {
@@ -25,13 +14,13 @@ export async function fetchCharacterFromApi(characterName) {
       },
     );
 
-    if (!response.ok) {
-      throw new Error(`API 요청 실패: ${response.status} ${response.statusText}`);
+    if (!objResponse.ok) {
+      throw new Error(`API 요청 실패: ${objResponse.status} ${objResponse.statusText}`);
     }
 
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    throw new Error(`❌ 캐릭터 정보 조회 실패: ${error.message}`);
+    const objResult = await objResponse.json();
+    return objResult;
+  } catch (errError) {
+    throw new Error(`❌ 캐릭터 정보 조회 실패: ${errError.message}`);
   }
 }

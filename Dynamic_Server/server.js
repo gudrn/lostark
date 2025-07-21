@@ -1,12 +1,12 @@
 import express from 'express';
-import { getCharacters } from './routers/characterController.js';
+import { fnGetCharacters } from './controller/characterController.js';
 import { connectRedis } from './redis/redisClient.js';
 const app = express();
 
 connectRedis();
 app.get('/characterName=:characterName', async (req, res) => {
   const characterName = req.params.characterName;
-  await getCharacters(characterName, res);
+  await fnGetCharacters(characterName, res);
 });
 
 app.listen(3000, () => {

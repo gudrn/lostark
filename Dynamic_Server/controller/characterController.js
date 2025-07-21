@@ -1,22 +1,23 @@
-import { fetchCharacterFromApi } from '../model/characterModel.js';
+import { fnFetchCharacterFromApi } from '../model/characterModel.js';
 import { characterCache } from '../redis/instances.js';
-import { formatCharacterData } from '../mappers/characterFormatter.js';
+import { fnFormatCharacterData } from '../mappers/characterFormatter.js';
 
-export const getCharacters = async (characterName, res) => {
+// 함수명에만 헝가리안 표기법 적용
+export const fnGetCharacters = async (str_characterName, res) => {
   try {
     // 기본 방어: 캐릭터 이름이 없을 경우
-    if (!characterName) {
+    if (!str_characterName) {
       return res.status(400).json({ error: '캐릭터 이름이 제공되지 않았습니다.' });
     }
 
     // 1. 캐시에서 먼저 조회
-    const cacheData = await characterCache.get(characterName);
+    const cacheData = await characterCache.get(str_characterName);
     if (cacheData) {
-      return res.json({ key: characterName, value: cacheData });
+      return res.json({ key: str_characterName, value: cacheData });
     }
 
     // 2. 외부 API에서 데이터 가져오기
-    const result = await fetchCharacterFromApi(characterName);
+    const result = await fnFetchCharacterFromApi(str_characterName);
 
     // 3. 존재하지 않거나 잘못된 응답
     if (!result || !result.ArmoryProfile) {
@@ -24,11 +25,11 @@ export const getCharacters = async (characterName, res) => {
     }
 
     // 4. 데이터 정제 및 캐시 저장
-    const character = formatCharacterData(result);
-    await characterCache.set(characterName, character, 300); // 5분 TTL
+    const character = fnFormatCharacterData(result);
+    await characterCache.set(str_characterName, character, 300); // 5분 TTL
 
     // 5. 최종 응답
-    return res.json({ key: characterName, value: character });
+    return res.json({ key: str_characterName, value: character });
   } catch (error) {
     throw new Error(error);
   }

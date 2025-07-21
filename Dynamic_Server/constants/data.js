@@ -51,27 +51,33 @@ export const marketCode = {
 
 export const gemstones = [
   {
-    "tier": 4,
+    "grade": "전설",
+    "name": "작열의 보석",
+    "levels": [5, 6, 7]
+  },
+  {
     "grade": "유물",
     "name": "작열의 보석",
-    "levels": [5, 6, 7, 8, 9, 10]
+    "levels": [8 ,9]
   },
   {
-    "tier": 4,
+    "grade": "고대",
+    "name": "작열의 보석",
+    "levels": [10]
+  },
+  {
+    "grade": "전설",
+    "name": "겁화의 보석",
+    "levels": [5, 6, 7]
+  },
+  {
     "grade": "유물",
     "name": "겁화의 보석",
-    "levels": [5, 6, 7, 8, 9, 10]
+    "levels": [8 ,9]
   },
   {
-    "tier": 3,
     "grade": "고대",
-    "name": "멸화의 보석",
-    "levels": [5, 6, 7, 8, 9, 10]
-  },
-  {
-    "tier": 3,
-    "grade": "고대",
-    "name": "홍염의 보석",
-    "levels": [5, 6, 7, 8, 9, 10]
+    "name": "겁화의 보석",
+    "levels": [10]
   }
 ]

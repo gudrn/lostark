@@ -1,19 +1,19 @@
 // 각 파트별로 분리된 매핑 함수들
 // 캐릭터 정보 매핑
-export const mapStats = (stats) =>
+export const fnMapStats = (stats) =>
   stats?.map((stat) => ({
     type: stat.Type,
     value: stat.Value,
   })) ?? [];
 
 // 장비 정보 매핑
-export const mapEquipmentSimple = (equipments) =>
+export const fnMapEquipmentSimple = (equipments) =>
   equipments?.map((equipment) => ({
     equipmentName: equipment.Name,
     equipmentLevel: equipment.Level,
   })) ?? [];
 
-export const mapEquipmentDetail = (equipments) =>
+export const fnMapEquipmentDetail = (equipments) =>
   equipments?.map((equipment) => ({
     type: equipment.Type,
     name: equipment.Name,
@@ -22,16 +22,17 @@ export const mapEquipmentDetail = (equipments) =>
   })) ?? [];
 
 // 아바타 정보 매핑
-export const mapAvatars = (avatars) =>
+export const fnMapAvatars = (avatars) =>
   avatars?.map((avatar) => ({
     type: avatar.Type,
     name: avatar.Name,
     icon: avatar.Icon,
     grade: avatar.Grade,
+    IsInner: avatar.IsInner,
   })) ?? [];
 
 // 각인 정보 매핑
-export const mapEngraving = (engraving) =>
+export const fnMapEngraving = (engraving) =>
   engraving && engraving.ArkPassiveEffects
     ? engraving.ArkPassiveEffects.map((effect) => ({
         name: effect.Name,
@@ -43,7 +44,7 @@ export const mapEngraving = (engraving) =>
     : [];
 
 // 카드 정보 매핑
-export const mapCardSimple = (card) =>
+export const fnMapCardSimple = (card) =>
   card?.map((card) => ({
     type: card.Type,
     name: card.Name,
@@ -52,7 +53,7 @@ export const mapCardSimple = (card) =>
   })) ?? [];
 
 // 카드 상세 정보 매핑
-export const mapCardDetail = (card) =>
+export const fnMapCardDetail = (card) =>
   card && card.Cards
     ? card.Cards.map((card) => ({
         slot: card.Slot,
@@ -61,22 +62,11 @@ export const mapCardDetail = (card) =>
         awakeCount: card.AwakeCount,
         awakeTotal: card.AwakeTotal,
         grade: card.Grade,
-        tooltip: card.Tooltip,
-      }))
-    : [];
-
-// 카드 효과 정보 매핑
-export const mapCardEffects = (card) =>
-  card && card.Effects
-    ? card.Effects.map((effect) => ({
-        index: effect.Index,
-        cardSlots: effect.CardSlots,
-        items: effect.Items,
       }))
     : [];
 
 // 보석 정보 매핑
-export const mapGems = (gem) =>
+export const fnMapGems = (gem) =>
   gem && gem.Gems
     ? gem.Gems.map((gem) => ({
         type: gem.Type,
@@ -87,40 +77,38 @@ export const mapGems = (gem) =>
     : [];
 
 // 패시브 정보 매핑
-export const mapPassive = (passive) =>
+export const fnMapPassive = (passive) =>
   passive && passive.Points
     ? {
         points: passive.Points.map((point) => ({
           name: point.Name,
           value: point.Value,
+          description: point.Description,
         })),
       }
     : { points: [] };
 
 // 캐릭터 데이터를 포맷팅하는 함수
-export function formatCharacterData(result) {
+export function fnFormatCharacterData(result) {
   return {
     charaterimage: result.ArmoryProfile.CharacterImage,
     expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
-    pvpGradeName: result.ArmoryProfile.PvpGradeName,
     townLevel: result.ArmoryProfile.TownLevel,
     townName: result.ArmoryProfile.TownName,
     title: result.ArmoryProfile.Title,
     guildName: result.ArmoryProfile.GuildName,
-    usingSkillPoint: result.ArmoryProfile.UsingSkillPoint,
     totalSkillPoint: result.ArmoryProfile.TotalSkillPoint,
-    stats: mapStats(result.ArmoryProfile.Stats),
+    stats: fnMapStats(result.ArmoryProfile.Stats),
     serverName: result.ArmoryProfile.Server,
     characterName: result.ArmoryProfile.Name,
     characterLevel: result.ArmoryProfile.Level,
     characterClassName: result.ArmoryProfile.ClassName,
     itemMaxLevel: result.ArmoryProfile.ItemMaxLevel,
-    armoryEquipment: mapEquipmentDetail(result.ArmoryEquipment),
-    armoryAvatars: mapAvatars(result.ArmoryAvatars),
-    armoryEngraving: mapEngraving(result.ArmoryEngraving),
-    armoryCard: mapCardDetail(result.ArmoryCard),
-    armoryCardEffects: mapCardEffects(result.ArmoryCard),
-    armoryGem: mapGems(result.ArmoryGem),
-    ArkPassive: mapPassive(result.ArkPassive),
+    armoryEquipment: fnMapEquipmentDetail(result.ArmoryEquipment),
+    armoryAvatars: fnMapAvatars(result.ArmoryAvatars),
+    armoryEngraving: fnMapEngraving(result.ArmoryEngraving),
+    armoryCard: fnMapCardDetail(result.ArmoryCard),
+    armoryGem: fnMapGems(result.ArmoryGem),
+    ArkPassive: fnMapPassive(result.ArkPassive),
   };
 }
