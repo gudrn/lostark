@@ -1,4 +1,3 @@
-import { extractTextFromHtml } from './extrachtText.js';
 // 각 파트별로 분리된 매핑 함수들
 // 캐릭터 정보 매핑
 export const fnMapStats = (stats) =>
@@ -39,7 +38,7 @@ export const fnMapEngraving = (engraving) =>
         name: effect.Name,
         grade: effect.Grade,
         level: effect.Level,
-        description: extractTextFromHtml(effect.Description),
+        description: effect.Description.replace(/<[^>]*>/g, ''),
         abilityStoneLevel: effect.AbilityStoneLevel,
       }))
     : [];
@@ -71,7 +70,7 @@ export const fnMapGems = (gem) =>
   gem && gem.Gems
     ? gem.Gems.map((gem) => ({
         type: gem.Type,
-        name: extractTextFromHtml(gem.Name),
+        name: gem.Name.replace(/<[^>]*>/g, ''),
         icon: gem.Icon,
         grade: gem.Grade,
       }))
