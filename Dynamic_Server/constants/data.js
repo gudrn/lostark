@@ -1,6 +1,6 @@
 // 카테고리 코드 전체 추가
 export const marketCode = {
-  all: "", // 전체 카테고리 (기본값)
+  all: '', // 전체 카테고리 (기본값)
   equipmentBoxAll: 10100, // 장비 상자 전체
   avatarWeapon: 20005, // 아바타 무기
   avatarHead: 20010, // 아바타 머리
@@ -45,39 +45,39 @@ export const marketCode = {
   mountBox: 160200, // 탈것 상자
   mountAll: 160000, // 탈것 전체
   etc: 170000, // 기타
-  gem : 210000,//보석
+  gem: 210000, //보석
   gemBox: 220000, // 보석 상자
 };
 
 export const gemstones = [
   {
-    "grade": "전설",
-    "name": "작열의 보석",
-    "levels": [5, 6, 7]
+    grade: '전설',
+    name: '작열의 보석',
+    levels: [5, 6, 7],
   },
   {
-    "grade": "유물",
-    "name": "작열의 보석",
-    "levels": [8 ,9]
+    grade: '유물',
+    name: '작열의 보석',
+    levels: [8, 9],
   },
   {
-    "grade": "고대",
-    "name": "작열의 보석",
-    "levels": [10]
+    grade: '고대',
+    name: '작열의 보석',
+    levels: [10],
   },
   {
-    "grade": "전설",
-    "name": "겁화의 보석",
-    "levels": [5, 6, 7]
+    grade: '전설',
+    name: '겁화의 보석',
+    levels: [5, 6, 7],
   },
   {
-    "grade": "유물",
-    "name": "겁화의 보석",
-    "levels": [8 ,9]
+    grade: '유물',
+    name: '겁화의 보석',
+    levels: [8, 9],
   },
   {
-    "grade": "고대",
-    "name": "겁화의 보석",
-    "levels": [10]
-  }
-]
+    grade: '고대',
+    name: '겁화의 보석',
+    levels: [10],
+  },
+];
