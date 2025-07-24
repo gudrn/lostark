@@ -1,15 +1,18 @@
 import { createClient } from 'redis';
 import { redisConfig } from '../config/config.js';
+import { CustomError } from '../utils/CustomError.js';
 
 export const redisClient = createClient({
   url: `redis://${redisConfig.redisHost}:${redisConfig.redisPort}`,
 });
 
-redisClient.on('error', (err) => console.log('Redis Client Error', err));
-
 export const connectRedis = async () => {
   await redisClient.connect();
 };
+
+redisClient.on('error', (err) => {
+  throw new CustomError(`❌ Redis 클라이언트 에러`, 500);
+});
 
 export class redisCache {
   constructor(client, prefix = '') {
@@ -47,15 +50,4 @@ export class redisCache {
       console.error(`[RedisCache:set] Error with key "${key}":`, error);
     }
   }
-}
-
-//test용용
-export async function getCache(key) {
-  const data = await redisClient.get(key);
-  return data ? JSON.parse(data) : null;
-}
-
-//test용
-export async function setCache(key, value, ttl) {
-  await redisClient.set(key, JSON.stringify(value), { EX: ttl });
 }

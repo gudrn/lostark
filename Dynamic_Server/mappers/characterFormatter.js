@@ -89,26 +89,24 @@ export const fnMapPassive = (passive) =>
     : { points: [] };
 
 // 캐릭터 데이터를 포맷팅하는 함수
-export function fnFormatCharacterData(result) {
-  return {
-    charaterimage: result.ArmoryProfile.CharacterImage,
-    expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
-    townLevel: result.ArmoryProfile.TownLevel,
-    townName: result.ArmoryProfile.TownName,
-    title: result.ArmoryProfile.Title,
-    guildName: result.ArmoryProfile.GuildName,
-    totalSkillPoint: result.ArmoryProfile.TotalSkillPoint,
-    stats: fnMapStats(result.ArmoryProfile.Stats),
-    serverName: result.ArmoryProfile.Server,
-    characterName: result.ArmoryProfile.Name,
-    characterLevel: result.ArmoryProfile.Level,
-    characterClassName: result.ArmoryProfile.ClassName,
-    itemMaxLevel: result.ArmoryProfile.ItemMaxLevel,
-    armoryEquipment: fnMapEquipmentDetail(result.ArmoryEquipment),
-    armoryAvatars: fnMapAvatars(result.ArmoryAvatars),
-    armoryEngraving: fnMapEngraving(result.ArmoryEngraving),
-    armoryCard: fnMapCardDetail(result.ArmoryCard),
-    armoryGem: fnMapGems(result.ArmoryGem),
-    ArkPassive: fnMapPassive(result.ArkPassive),
-  };
-}
+export const fnFormatCharacterData = (result) => ({
+  charaterimage: result.ArmoryProfile.CharacterImage,
+  expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
+  townLevel: result.ArmoryProfile.TownLevel,
+  townName: result.ArmoryProfile.TownName,
+  title: result.ArmoryProfile.Title,
+  guildName: result.ArmoryProfile.GuildName,
+  totalSkillPoint: result.ArmoryProfile.TotalSkillPoint,
+  stats: fnMapStats(result.ArmoryProfile.Stats),
+  serverName: result.ArmoryProfile.Server,
+  characterName: result.ArmoryProfile.Name,
+  characterLevel: result.ArmoryProfile.Level,
+  characterClassName: result.ArmoryProfile.ClassName,
+  itemMaxLevel: result.ArmoryProfile.ItemMaxLevel,
+  armoryEquipment: fnMapEquipmentDetail(result.ArmoryEquipment),
+  armoryAvatars: fnMapAvatars(result.ArmoryAvatars),
+  armoryEngraving: fnMapEngraving(result.ArmoryEngraving),
+  armoryCard: fnMapCardDetail(result.ArmoryCard),
+  armoryGem: fnMapGems(result.ArmoryGem),
+  ArkPassive: fnMapPassive(result.ArkPassive),
+});
