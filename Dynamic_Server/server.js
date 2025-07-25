@@ -14,7 +14,9 @@ app.use(express.json());
 connectRedis();
 
 // 라우터 연결
+
 app.use('/character', characterRoutes);
+
 app.use('/market', marketRoutes);
 
 // 에러 핸들링
