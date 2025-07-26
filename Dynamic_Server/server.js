@@ -3,6 +3,7 @@ import { connectRedis } from './src/redis/redisClient.js';
 import { errorMiddleware } from './src/middlewares/errorMiddleware.js';
 import characterRoutes from './src/routes/characterroutes.js';
 import marketRoutes from './src/routes/marketroutes.js';
+import { fnSpecCalander } from './src/service/specsService.js';
 
 const app = express();
 const PORT = 3000;
@@ -25,4 +26,5 @@ app.use(errorMiddleware);
 // 서버 실행
 app.listen(PORT, () => {
   console.log(`🧙 서버가 http://localhost:${PORT} 에서 실행 중`);
+  fnSpecCalander('코코모누님');
 });

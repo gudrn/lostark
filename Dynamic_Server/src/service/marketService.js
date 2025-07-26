@@ -5,9 +5,12 @@ import {
 } from '../model/marketModel.js';
 import { fnMapMarketItem, fnMapMarketforceItem } from '../mappers/marketFormater.js';
 import { gemstones } from '../constants/data.js';
-
-// 유물 아이템 데이터를 가져오는 함수
-export const arrMarketRelicsItemFromApi = async () => {
+import { marketCache } from '../redis/instances.js';
+/**
+ * 유물 아이템(각인서 등) 마켓 데이터를 외부 API에서 1~4페이지까지 조회하여
+ * 정제된 배열로 반환하는 함수
+ */
+const arrMarketRelicsItemFromApi = async () => {
   try {
     // 1페이지부터 4페이지까지의 결과를 flatMap으로 변환
     const arrAllItems = (
@@ -19,7 +22,11 @@ export const arrMarketRelicsItemFromApi = async () => {
   }
 };
 
-export const objMarketTierForceProductFromApi = async () => {
+/**
+ * 티어별 강화 재료(재련 재료) 마켓 데이터를 외부 API에서 1, 2페이지 조회 후
+ * 정제된 배열로 반환하는 함수
+ */
+const objMarketTierForceProductFromApi = async () => {
   // 1, 2페이지에 대해 각각 API 호출 후 결과를 평탄화(flatten)
   const arrAllItems = (
     await Promise.all([
@@ -32,8 +39,11 @@ export const objMarketTierForceProductFromApi = async () => {
   return arrAllItems;
 };
 
-// 4티어 어보석 아이템 데이터를 가져오는 함수 (병렬 최적화)
-export const arrMarketGemItemFromApi = async () => {
+/**
+ * 보석(작열/겁화 등) 마켓 데이터를 gemstones 배열의 각 조합별로 외부 API에서 조회하여
+ * 이름, 가격만 추출한 배열로 반환하는 함수
+ */
+const arrMarketGemItemFromApi = async () => {
   // gemstones 배열의 각 보석/레벨 조합에 대해 요청할 파라미터 생성
   const gemParams = gemstones.flatMap(({ name, levels, grade }) =>
     levels.map((level) => ({
@@ -61,4 +71,29 @@ export const arrMarketGemItemFromApi = async () => {
     .filter(Boolean);
 
   return arrGemItems;
+};
+
+// 마켓 전체 아이템을 캐시 및 조회하는 함수로 분리
+export const getAllMarketItems = async () => {
+  const cacheKey = 'allArrMarketItems';
+  const cachedData = await marketCache.get(cacheKey);
+
+  if (cachedData) {
+    // 캐시된 데이터가 있으면 반환
+    return { fromCache: true, data: cachedData };
+  }
+
+  // 캐시가 없으면 API에서 데이터 조회
+  const [gem, relic, force] = await Promise.all([
+    arrMarketGemItemFromApi(),
+    arrMarketRelicsItemFromApi(),
+    objMarketTierForceProductFromApi(),
+  ]);
+
+  const result = { Gem: gem, Relic: relic, Force: force };
+
+  // 1시간 동안 캐시에 저장
+  await marketCache.set(cacheKey, result, 3600);
+
+  return result;
 };

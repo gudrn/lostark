@@ -1,7 +1,7 @@
 import { lostarkConfig } from '../config/config.js';
 
 // 캐릭터 정보를 API에서 가져오는 함수 (헝가리안 표기법 적용)
-export async function fnFetchCharacterFromApi(strCharacterName) {
+export const fnFetchCharacterFromApi = async (strCharacterName) => {
   try {
     const objResponse = await fetch(
       `${lostarkConfig.lostarkapiurl}/armories/characters/${encodeURIComponent(strCharacterName)}`,
@@ -23,4 +23,4 @@ export async function fnFetchCharacterFromApi(strCharacterName) {
   } catch (errError) {
     throw new Error(`❌ 캐릭터 정보 조회 실패: ${errError.message}`);
   }
-}
+};
