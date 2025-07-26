@@ -13,7 +13,10 @@ export const fnGetCharacters = async (str_characterName) => {
 
     // 1. 캐시에서 먼저 조회
     const cacheData = await characterCache.get(str_characterName);
-    if (cacheData) return { characterName: str_characterName, data: cacheData };
+
+    if (cacheData) {
+      return { characterName: str_characterName, data: cacheData };
+    }
 
     // 2. 외부 API에서 데이터 가져오기
     const result = await fnFetchCharacterFromApi(str_characterName);
