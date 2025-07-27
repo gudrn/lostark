@@ -1,9 +1,14 @@
-import { marketCache } from '../redis/instances.js';
-import { getAllMarketItems } from '../service/marketService.js';
+import { Request, Response } from 'express';
+import { marketCache } from '../redis/instances';
+import { getAllMarketItems } from '../service/marketService';
 
 // 마켓 전체 아이템을 조회하는 함수
 // Express 라우터에서 (req, res) 형태로 호출되어야 함
-export const fnallArrMarketItems = async (req, res) => {
+export const fnallArrMarketItems = async (
+  req: Request,
+  res: Response,
+  next: unknown,
+): Promise<Response> => {
   try {
     // 함수 호출 및 응답 처리
     const data = await getAllMarketItems();

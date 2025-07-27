@@ -1,20 +1,122 @@
 // 각 파트별로 분리된 매핑 함수들
+// 타입 정의
+export interface Stat {
+  Type: string;
+  Value: number;
+}
+
+export interface Equipment {
+  Type: string;
+  Name: string;
+  Icon: string;
+  Grade: string;
+  Level?: number;
+  Tooltip?: string | object;
+}
+
+export interface Avatar {
+  Type: string;
+  Name: string;
+  Icon: string;
+  Grade: string;
+  IsInner?: boolean;
+}
+
+export interface EngravingEffect {
+  Name: string;
+  Grade: string;
+  Level: number;
+}
+
+export interface Engraving {
+  ArkPassiveEffects: EngravingEffect[];
+}
+
+export interface Card {
+  Type: string;
+  Name: string;
+  Icon: string;
+  Grade: string;
+}
+
+export interface CardDetail {
+  Slot: number;
+  Name: string;
+  Icon: string;
+  AwakeCount: number;
+  AwakeTotal: number;
+  Grade: string;
+}
+
+export interface CardSet {
+  Cards: CardDetail[];
+}
+
+export interface GemItem {
+  Type: string;
+  Name: string;
+  Icon: string;
+  Grade: string;
+}
+
+export interface GemSet {
+  Gems: GemItem[];
+}
+
+export interface PassivePoint {
+  Name: string;
+  Value: number;
+  Description: string;
+}
+
+export interface Passive {
+  Points: PassivePoint[];
+}
+
+export interface ArmoryProfile {
+  CharacterImage: string;
+  ExpeditionLevel: number;
+  TownLevel: number;
+  TownName: string;
+  Title: string;
+  GuildName: string;
+  TotalSkillPoint: number;
+  Stats: Stat[];
+  Server: string;
+  Name: string;
+  Level: number;
+  ClassName: string;
+  ItemMaxLevel: string;
+}
+
+export interface CharacterResult {
+  ArmoryProfile: ArmoryProfile;
+  ArmoryEquipment?: Equipment[];
+  ArmoryAvatars?: Avatar[];
+  ArmoryEngraving?: Engraving;
+  ArmoryCard?: CardSet;
+  ArmoryGem?: GemSet;
+  ArkPassive?: Passive;
+}
+
 // 캐릭터 정보 매핑
-export const fnMapStats = (stats) =>
+export const fnMapStats = (stats?: Stat[]): { type: string; value: number }[] =>
   stats?.map((stat) => ({
     type: stat.Type,
     value: stat.Value,
   })) ?? [];
 
 // 장비 정보 매핑
-export const fnMapEquipmentSimple = (equipments) =>
+export const fnMapEquipmentSimple = (
+  equipments?: Equipment[],
+): { equipmentName: string; equipmentLevel?: number }[] =>
   equipments?.map((equipment) => ({
     equipmentName: equipment.Name,
     equipmentLevel: equipment.Level,
   })) ?? [];
 
 // HTML 태그 제거 함수
-const removeHtmlTags = (value) => {
+const removeHtmlTags = (value: any): any => {
   if (typeof value === 'string') {
     // </FONT>을 \n으로 바꾸고, 나머지 HTML 태그 제거
     return value.replace(/<\/FONT>/gi, ' ').replace(/<[^>]*>/g, '');
@@ -24,7 +126,7 @@ const removeHtmlTags = (value) => {
   }
   if (typeof value === 'object' && value !== null) {
     // 객체라면 모든 key에 대해 재귀적으로 처리
-    const result = {};
+    const result: any = {};
     for (const key in value) {
       result[key] = removeHtmlTags(value[key]);
     }
@@ -33,13 +135,15 @@ const removeHtmlTags = (value) => {
   return value;
 };
 
-// Tooltip 파싱 함수
-const parseTooltip = (tooltip) => {
+// Tooltip 파싱 함수 수정
+const parseTooltip = (tooltip: string | object): any => {
   try {
+    // tooltip이 문자열이면 JSON 파싱, 아니면 그대로 사용
     const tooltipObj = typeof tooltip === 'string' ? JSON.parse(tooltip) : tooltip;
+    // HTML 태그 제거 함수 적용
     return removeHtmlTags(tooltipObj);
   } catch (e) {
-    // 파싱 실패 시 문자열이면 html 태그만 제거
+    // 파싱 실패 시 문자열이면 HTML 태그만 제거, 아니면 원본 반환
     if (typeof tooltip === 'string') {
       return removeHtmlTags(tooltip);
     }
@@ -47,17 +151,33 @@ const parseTooltip = (tooltip) => {
   }
 };
 
-export const fnMapEquipmentDetail = (equipments) =>
+export const fnMapEquipmentDetail = (
+  equipments?: Equipment[],
+): {
+  type: string;
+  name: string;
+  icon: string;
+  grade: string;
+  tooltip: any;
+}[] =>
   equipments?.map((equipment) => ({
     type: equipment.Type,
     name: equipment.Name,
     icon: equipment.Icon,
     grade: equipment.Grade,
-    tooltip: parseTooltip(equipment.Tooltip),
+    tooltip: equipment.Tooltip ? parseTooltip(equipment.Tooltip) : undefined,
   })) ?? [];
 
 // 아바타 정보 매핑
-export const fnMapAvatars = (avatars) =>
+export const fnMapAvatars = (
+  avatars?: Avatar[],
+): {
+  type: string;
+  name: string;
+  icon: string;
+  grade: string;
+  IsInner?: boolean;
+}[] =>
   avatars?.map((avatar) => ({
     type: avatar.Type,
     name: avatar.Name,
@@ -67,7 +187,13 @@ export const fnMapAvatars = (avatars) =>
   })) ?? [];
 
 // 각인 정보 매핑
-export const fnMapEngraving = (engraving) =>
+export const fnMapEngraving = (
+  engraving?: Engraving,
+): {
+  name: string;
+  grade: string;
+  level: number;
+}[] =>
   engraving && engraving.ArkPassiveEffects
     ? engraving.ArkPassiveEffects.map((effect) => ({
         name: effect.Name,
@@ -77,7 +203,14 @@ export const fnMapEngraving = (engraving) =>
     : [];
 
 // 카드 정보 매핑
-export const fnMapCardSimple = (card) =>
+export const fnMapCardSimple = (
+  card?: Card[],
+): {
+  type: string;
+  name: string;
+  icon: string;
+  grade: string;
+}[] =>
   card?.map((card) => ({
     type: card.Type,
     name: card.Name,
@@ -86,7 +219,16 @@ export const fnMapCardSimple = (card) =>
   })) ?? [];
 
 // 카드 상세 정보 매핑
-export const fnMapCardDetail = (card) =>
+export const fnMapCardDetail = (
+  card?: CardSet,
+): {
+  slot: number;
+  name: string;
+  icon: string;
+  awakeCount: number;
+  awakeTotal: number;
+  grade: string;
+}[] =>
   card && card.Cards
     ? card.Cards.map((card) => ({
         slot: card.Slot,
@@ -99,7 +241,14 @@ export const fnMapCardDetail = (card) =>
     : [];
 
 // 보석 정보 매핑
-export const fnMapGems = (gem) =>
+export const fnMapGems = (
+  gem?: GemSet,
+): {
+  type: string;
+  name: string;
+  icon: string;
+  grade: string;
+}[] =>
   gem && gem.Gems
     ? gem.Gems.map((gem) => ({
         type: gem.Type,
@@ -110,7 +259,15 @@ export const fnMapGems = (gem) =>
     : [];
 
 // 패시브 정보 매핑
-export const fnMapPassive = (passive) =>
+export const fnMapPassive = (
+  passive?: Passive,
+): {
+  points: {
+    name: string;
+    value: number;
+    description: string;
+  }[];
+} =>
   passive && passive.Points
     ? {
         points: passive.Points.map((point) => ({
@@ -122,7 +279,7 @@ export const fnMapPassive = (passive) =>
     : { points: [] };
 
 // 캐릭터 데이터를 포맷팅하는 함수
-export const fnFormatCharacterData = (result) => ({
+export const fnFormatCharacterData = (result: CharacterResult) => ({
   charaterimage: result.ArmoryProfile.CharacterImage,
   expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
   townLevel: result.ArmoryProfile.TownLevel,

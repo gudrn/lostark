@@ -1,5 +1,55 @@
 // 카테고리 코드 전체 추가
-export const marketCode = {
+export interface MarketCode {
+  all: string;
+  equipmentBoxAll: number;
+  avatarWeapon: number;
+  avatarHead: number;
+  avatarFace1: number;
+  avatarFace2: number;
+  avatarTop: number;
+  avatarBottom: number;
+  avatarSet: number;
+  avatarInstrument: number;
+  avatarBox: number;
+  avatarMoveEffect: number;
+  avatarAll: number;
+  relicAll: number;
+  reinforce: number;
+  reinforceAdd: number;
+  reinforceEtc: number;
+  reinforceWeaponEvo: number;
+  reinforceAll: number;
+  battleItemHeal: number;
+  battleItemAttack: number;
+  battleItemFunction: number;
+  battleItemBuff: number;
+  battleItemAll: number;
+  foodAll: number;
+  lifePlant: number;
+  lifeLumber: number;
+  lifeMine: number;
+  lifeHunt: number;
+  lifeFish: number;
+  lifeArchaeology: number;
+  lifeEtc: number;
+  lifeAll: number;
+  adventureBook: number;
+  sailingMaterial: number;
+  sailingSkin: number;
+  sailingMaterialBox: number;
+  sailingAll: number;
+  pet: number;
+  petBox: number;
+  petAll: number;
+  mount: number;
+  mountBox: number;
+  mountAll: number;
+  etc: number;
+  gem: number;
+  gemBox: number;
+}
+
+export const marketCode: MarketCode = {
   all: '', // 전체 카테고리 (기본값)
   equipmentBoxAll: 10100, // 장비 상자 전체
   avatarWeapon: 20005, // 아바타 무기
@@ -49,7 +99,13 @@ export const marketCode = {
   gemBox: 220000, // 보석 상자
 };
 
-export const gemstones = [
+export interface Gemstone {
+  grade: string;
+  name: string;
+  levels: number[];
+}
+
+export const gemstones: Gemstone[] = [
   {
     grade: '전설',
     name: '작열의 보석',
@@ -82,7 +138,7 @@ export const gemstones = [
   },
 ];
 
-export const equipmentTypes = [
+export const equipmentTypes: string[] = [
   '무기',
   '투구',
   '상의',
@@ -96,7 +152,13 @@ export const equipmentTypes = [
   '반지',
 ]; //안쓸예정
 
-export const exceptedRelics = [
+export interface ExceptedRelic {
+  itemName: string;
+  itemIcon: string;
+  itemCurrentMinPrice: number;
+}
+
+export const exceptedRelics: ExceptedRelic[] = [
   {
     itemName: '긴급구조 각인서',
     itemIcon: 'https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_9_25.png',

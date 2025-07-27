@@ -1,0 +1,42 @@
+import { fnFetchCharacterFromApi } from '../model/characterModel';
+import { characterCache } from '../redis/instances';
+import { fnFormatCharacterData } from '../mappers/characterFormatter';
+
+// 필요한 타입 정의 (실제 데이터 구조에 맞게 수정 필요)
+export interface ICharacterProfile {
+  // 예시 필드, 실제 구조에 맞게 추가/수정
+  ArmoryProfile?: any;
+  [key: string]: any;
+}
+
+export interface IFormattedCharacter {
+  // 예시 필드, 실제 구조에 맞게 추가/수정
+  armoryEquipment?: any[];
+  [key: string]: any;
+}
+
+export interface IGetCharacterResult {
+  characterName?: string;
+  data?: IFormattedCharacter;
+  error?: string;
+}
+
+// 캐릭터 정보를 가져와 캐시하는 함수로 분리
+export const getCharacter = async (characterName: string): Promise<IGetCharacterResult> => {
+  // 1. 캐시에서 먼저 조회
+  const cacheData = await characterCache.get<IFormattedCharacter>(characterName);
+
+  if (cacheData) return { characterName: characterName, data: cacheData };
+
+  // 2. 외부 API에서 데이터 가져오기
+  const result: ICharacterProfile | null = await fnFetchCharacterFromApi(characterName);
+
+  // 3. 존재하지 않거나 잘못된 응답
+  if (!result || !result.ArmoryProfile) return { error: '캐릭터를 찾을 수 없습니다.' };
+
+  // 4. 데이터 정제 및 캐시 저장
+  const character: IFormattedCharacter = fnFormatCharacterData(result as any);
+  await characterCache.set(characterName, character, 300); // 5분 TTL
+
+  return { characterName: characterName, data: character };
+};

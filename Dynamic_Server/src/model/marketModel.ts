@@ -1,8 +1,13 @@
-import { lostarkConfig } from '../config/config.js';
-import { marketCode } from '../constants/data.js';
+import { lostarkConfig } from '../config/config';
+import { marketCode } from '../constants/data';
+
+// 마켓 아이템 타입 정의 (간단 예시, 필요시 확장)
+export interface MarketItem {
+  [key: string]: any;
+}
 
 // 유물 각인서 아이템 페이지를 가져오는 함수
-export const fnFetchRelicMarketPage = async (nPage) => {
+export const fnFetchRelicMarketPage = async (nPage: number): Promise<MarketItem[] | null> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
       method: 'POST',
@@ -28,7 +33,10 @@ export const fnFetchRelicMarketPage = async (nPage) => {
 };
 
 // 강화 재료 아이템 페이지를 가져오는 함수
-export const fnFetchEnTierForceProductFromApi = async (nTier, nPage) => {
+export const fnFetchEnTierForceProductFromApi = async (
+  nTier: number,
+  nPage: number
+): Promise<MarketItem[] | null> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
       method: 'POST',
@@ -53,7 +61,10 @@ export const fnFetchEnTierForceProductFromApi = async (nTier, nPage) => {
 };
 
 // 보석 아이템 페이지를 가져오는 함수
-export const fnFetchEnGemstoneFromApi = async (sName, grade) => {
+export const fnFetchEnGemstoneFromApi = async (
+  sName: string,
+  grade: string
+): Promise<MarketItem[] | null> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/auctions/items`, {
       method: 'POST',
