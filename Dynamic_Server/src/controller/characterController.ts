@@ -1,4 +1,5 @@
-import { getCharacter, IGetCharacterResult } from '../service/characterService';
+import { getCharacter } from '../service/characterService';
+import { IGetCharacterResult } from '../service/types/characterServiceType';
 
 // fnGetCharacters 함수 타입 정의
 export const fnGetCharacters = async (str_characterName: string): Promise<IGetCharacterResult> => {

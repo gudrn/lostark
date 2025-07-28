@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { marketCache } from '../redis/instances';
 import { getAllMarketItems } from '../service/marketService';
 
 // 마켓 전체 아이템을 조회하는 함수

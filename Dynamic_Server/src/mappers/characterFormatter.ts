@@ -1,103 +1,15 @@
 // 각 파트별로 분리된 매핑 함수들
-// 타입 정의
-export interface Stat {
-  Type: string;
-  Value: number;
-}
-
-export interface Equipment {
-  Type: string;
-  Name: string;
-  Icon: string;
-  Grade: string;
-  Level?: number;
-  Tooltip?: string | object;
-}
-
-export interface Avatar {
-  Type: string;
-  Name: string;
-  Icon: string;
-  Grade: string;
-  IsInner?: boolean;
-}
-
-export interface EngravingEffect {
-  Name: string;
-  Grade: string;
-  Level: number;
-}
-
-export interface Engraving {
-  ArkPassiveEffects: EngravingEffect[];
-}
-
-export interface Card {
-  Type: string;
-  Name: string;
-  Icon: string;
-  Grade: string;
-}
-
-export interface CardDetail {
-  Slot: number;
-  Name: string;
-  Icon: string;
-  AwakeCount: number;
-  AwakeTotal: number;
-  Grade: string;
-}
-
-export interface CardSet {
-  Cards: CardDetail[];
-}
-
-export interface GemItem {
-  Type: string;
-  Name: string;
-  Icon: string;
-  Grade: string;
-}
-
-export interface GemSet {
-  Gems: GemItem[];
-}
-
-export interface PassivePoint {
-  Name: string;
-  Value: number;
-  Description: string;
-}
-
-export interface Passive {
-  Points: PassivePoint[];
-}
-
-export interface ArmoryProfile {
-  CharacterImage: string;
-  ExpeditionLevel: number;
-  TownLevel: number;
-  TownName: string;
-  Title: string;
-  GuildName: string;
-  TotalSkillPoint: number;
-  Stats: Stat[];
-  Server: string;
-  Name: string;
-  Level: number;
-  ClassName: string;
-  ItemMaxLevel: string;
-}
-
-export interface CharacterResult {
-  ArmoryProfile: ArmoryProfile;
-  ArmoryEquipment?: Equipment[];
-  ArmoryAvatars?: Avatar[];
-  ArmoryEngraving?: Engraving;
-  ArmoryCard?: CardSet;
-  ArmoryGem?: GemSet;
-  ArkPassive?: Passive;
-}
+import {
+  Equipment,
+  Stat,
+  Avatar,
+  Engraving,
+  Card,
+  CardSet,
+  GemSet,
+  Passive,
+  CharacterResult,
+} from './types/characterTypes';
 
 // 캐릭터 정보 매핑
 export const fnMapStats = (stats?: Stat[]): { type: string; value: number }[] =>

@@ -1,53 +1,5 @@
 // 카테고리 코드 전체 추가
-export interface MarketCode {
-  all: string;
-  equipmentBoxAll: number;
-  avatarWeapon: number;
-  avatarHead: number;
-  avatarFace1: number;
-  avatarFace2: number;
-  avatarTop: number;
-  avatarBottom: number;
-  avatarSet: number;
-  avatarInstrument: number;
-  avatarBox: number;
-  avatarMoveEffect: number;
-  avatarAll: number;
-  relicAll: number;
-  reinforce: number;
-  reinforceAdd: number;
-  reinforceEtc: number;
-  reinforceWeaponEvo: number;
-  reinforceAll: number;
-  battleItemHeal: number;
-  battleItemAttack: number;
-  battleItemFunction: number;
-  battleItemBuff: number;
-  battleItemAll: number;
-  foodAll: number;
-  lifePlant: number;
-  lifeLumber: number;
-  lifeMine: number;
-  lifeHunt: number;
-  lifeFish: number;
-  lifeArchaeology: number;
-  lifeEtc: number;
-  lifeAll: number;
-  adventureBook: number;
-  sailingMaterial: number;
-  sailingSkin: number;
-  sailingMaterialBox: number;
-  sailingAll: number;
-  pet: number;
-  petBox: number;
-  petAll: number;
-  mount: number;
-  mountBox: number;
-  mountAll: number;
-  etc: number;
-  gem: number;
-  gemBox: number;
-}
+import { ExceptedRelic, Gemstone, MarketCode } from './types/types';
 
 export const marketCode: MarketCode = {
   all: '', // 전체 카테고리 (기본값)
@@ -99,12 +51,6 @@ export const marketCode: MarketCode = {
   gemBox: 220000, // 보석 상자
 };
 
-export interface Gemstone {
-  grade: string;
-  name: string;
-  levels: number[];
-}
-
 export const gemstones: Gemstone[] = [
   {
     grade: '전설',
@@ -151,12 +97,6 @@ export const equipmentTypes: string[] = [
   '반지',
   '반지',
 ]; //안쓸예정
-
-export interface ExceptedRelic {
-  itemName: string;
-  itemIcon: string;
-  itemCurrentMinPrice: number;
-}
 
 export const exceptedRelics: ExceptedRelic[] = [
   {

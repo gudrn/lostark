@@ -1,6 +1,3 @@
-import { getCharacter, IGetCharacterResult } from '../service/characterService';
-import { getAllMarketItems, GetAllMarketItemsResult } from '../service/marketService';
-
 export async function fnSpecCalanderFuntion(
   str_characterName: string,
 ): Promise<{ error?: string }> {

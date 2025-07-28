@@ -6,35 +6,13 @@ import {
 import { fnMapMarketItem, fnMapMarketforceItem } from '../mappers/marketFormater';
 import { gemstones } from '../constants/data';
 import { marketCache } from '../redis/instances';
-
-// 타입 정의
-interface GemItem {
-  name: string;
-  buyPrice: number;
-}
-
-interface RelicItem {
-  itemName: string;
-  itemCurrentMinPrice: number;
-  // 필요한 필드 추가
-  [key: string]: any;
-}
-
-interface ForceItem {
-  // 필요한 필드 정의
-  [key: string]: any;
-}
-
-interface AllMarketItems {
-  Gem: GemItem[];
-  Relic: RelicItem[];
-  Force: ForceItem[];
-}
-
-interface GetAllMarketItemsResult {
-  fromCache?: boolean;
-  data?: AllMarketItems;
-}
+import {
+  RelicItem,
+  GemItem,
+  ForceItem,
+  AllMarketItems,
+  GetAllMarketItemsResult,
+} from './types/marketServiceTypes';
 
 // 유물 아이템(각인서 등) 마켓 데이터를 외부 API에서 1~4페이지까지 조회하여 정제된 배열로 반환
 const arrMarketRelicsItemFromApi = async (): Promise<RelicItem[]> => {

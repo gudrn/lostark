@@ -1,15 +1,6 @@
 import dotenv from 'dotenv';
+import { ILostarkConfig, IRedisConfig } from './types/types';
 dotenv.config();
-
-export interface ILostarkConfig {
-  lostarkapikey: string;
-  lostarkapiurl: string;
-}
-
-export interface IRedisConfig {
-  redisHost: string;
-  redisPort: string;
-}
 
 export const lostarkConfig: ILostarkConfig = {
   lostarkapikey: process.env.LOSTARK_API_KEY || '',
