@@ -11,7 +11,6 @@ export const fnMapMarketItem = (item: MarketItem) => ({
 
 // 강화 재료(재련 재료) 마켓 아이템 매핑 함수
 export const fnMapMarketforceItem = (item: MarketForceItem) => ({
-  id: item.Id,
   name: item.Name,
   icon: item.Icon,
   recentprice: item.RecentPrice,

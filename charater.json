@@ -1,0 +1,2053 @@
+{
+  "characterName": "코코모누님",
+  "data": {
+    "charaterimage": "https://img.lostark.co.kr/armory/0/0DF338B72F3CC58A2C0B5B69974566FF73B889D3F9FD36B4FCA7C636A212DE44.jpg?v=20250731125452",
+    "expeditionLevel": 310,
+    "townLevel": 70,
+    "townName": "르테란",
+    "title": "몽환군단장 슬레이어",
+    "guildName": "아볼루온",
+    "totalSkillPoint": 483,
+    "stats": [
+      {
+        "type": "치명",
+        "value": "1036"
+      },
+      {
+        "type": "특화",
+        "value": "68"
+      },
+      {
+        "type": "제압",
+        "value": "79"
+      },
+      {
+        "type": "신속",
+        "value": "1470"
+      },
+      {
+        "type": "인내",
+        "value": "69"
+      },
+      {
+        "type": "숙련",
+        "value": "71"
+      },
+      {
+        "type": "최대 생명력",
+        "value": "316071"
+      },
+      {
+        "type": "공격력",
+        "value": "157588"
+      }
+    ],
+    "armoryEquipment": [
+      {
+        "type": "무기",
+        "name": "+25 운명의 업화 대검",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_item/bk_item_01_197.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+25 운명의 업화 대검 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 대검  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1755 (티어 4) ",
+              "qualityValue": 100,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_item/bk_item_01_197.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "무기 공격력 +161770"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "추가 피해 +30.00%"
+            }
+          },
+          "Element_009": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "무기 공격력 +2940"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 공격력이 800  증가하며, 낙인력이 2%  증가합니다. "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 공격력이 800  추가로 증가하며, 아군 공격력 강화 효과가 2%  증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - 공격력이 800  추가로 증가하며, 낙인력이 2%  추가로 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 공격력이 1125  추가로 증가하며, 낙인력이 4%  추가로 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "분해불가 , 품질 업그레이드 불가  "
+          },
+          "Element_012": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_013": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_014": {
+            "type": "SingleTextBox",
+            "value": "[제작] 대도시 "
+          },
+          "Element_015": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 95 / 175   |"
+          }
+        }
+      },
+      {
+        "type": "투구",
+        "name": "+19 신념의 업화 투구",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_22.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+19 신념의 업화 투구 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 머리 방어구  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1725 (티어 4) ",
+              "qualityValue": 97,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_22.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "물리 방어력 +8154마법 방어력 +9060힘 +75946체력 +8075"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "생명 활성력 +1318"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": {
+              "forceValue": " ",
+              "maximum": 63000,
+              "minimum": 0,
+              "title": "현재 단계 재련 경험치  ",
+              "value": 0,
+              "valueType": 1
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "힘 +5880"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 장착중인 모든 장비의 초월 등급 당 최대 생명력이 80 씩, 아군 공격력 강화 효과가 0.01% 씩 증가합니다. "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 장착중인 모든 장비의 초월 등급 당 힘, 민첩, 지능이 55 씩, 아군 공격력 강화 효과가 0.01% 씩 증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - 장착중인 모든 장비의 초월 등급 당 무기 공격력이 14 씩, 아군 공격력 강화 효과가 0.01% 씩 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 장착중인 모든 장비의 초월 등급 당 공격력이 6 씩, 아군 공격력 강화 효과가 0.01% 씩 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_011": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  공격력 Lv.5 공격력 +767"
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "[투구]  회심 (질서) Lv.5 공격력 +1.44%물리 방어력 +3000'회심 (혼돈)' 효과와 함께 활성화 시, '회심' 연성 추가 효과 발동"
+                  }
+                },
+                "topStr": "[엘릭서] 지혜의 엘릭서  "
+              }
+            }
+          },
+          "Element_012": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "1단계 : 지혜의 엘릭서  레벨 합 35 공격이 치명타로 적중 시 적에게 주는 피해가 6%  추가로 증가한다. "
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "2단계 : 지혜의 엘릭서  레벨 합 40 1단계 효과가 강화되어, 공격이 치명타로 적중 시 적에게 주는 피해 증가 수치가 12% 로 적용된다. "
+                  }
+                },
+                "topStr": "연성 추가 효과 회심 (2단계) "
+              }
+            }
+          },
+          "Element_013": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "[장비 업그레이드 효과] ",
+              "Element_001": "Lv.1&nbsp;/&nbsp;Lv.2&nbsp;/&nbsp;Lv.3  진화 +&nbsp;16&nbsp;/&nbsp;18&nbsp;/&nbsp;20  "
+            }
+          },
+          "Element_014": {
+            "type": "SingleTextBox",
+            "value": "분해불가  "
+          },
+          "Element_015": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_016": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_017": {
+            "type": "SingleTextBox",
+            "value": "[장비 업그레이드] 대도시 "
+          },
+          "Element_018": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 62 / 66   |"
+          }
+        }
+      },
+      {
+        "type": "상의",
+        "name": "+19 신념의 업화 상의",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_18.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+19 신념의 업화 상의 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 상의  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1725 (티어 4) ",
+              "qualityValue": 93,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_18.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "물리 방어력 +10872마법 방어력 +9966힘 +60757체력 +10767"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "생명 활성력 +1211"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": {
+              "forceValue": " ",
+              "maximum": 63000,
+              "minimum": 0,
+              "title": "현재 단계 재련 경험치  ",
+              "value": 0,
+              "valueType": 1
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "힘 +5880"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 무기 공격력이 2000  증가합니다. "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 체력이 1400  증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - 무기 공격력이 2000  추가로 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 무기 공격력이 3200  추가로 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_011": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  공격력 Lv.5 공격력 +767"
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  힘 Lv.5 힘 +5400"
+                  }
+                },
+                "topStr": "[엘릭서] 지혜의 엘릭서  "
+              }
+            }
+          },
+          "Element_012": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "[장비 업그레이드 효과] ",
+              "Element_001": "Lv.1&nbsp;/&nbsp;Lv.2&nbsp;/&nbsp;Lv.3  진화 +&nbsp;16&nbsp;/&nbsp;18&nbsp;/&nbsp;20  "
+            }
+          },
+          "Element_013": {
+            "type": "SingleTextBox",
+            "value": "분해불가  "
+          },
+          "Element_014": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_015": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_016": {
+            "type": "SingleTextBox",
+            "value": "[장비 업그레이드] 대도시 "
+          },
+          "Element_017": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 80 / 84   |"
+          }
+        }
+      },
+      {
+        "type": "하의",
+        "name": "+19 신념의 업화 하의",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_13.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+19 신념의 업화 하의 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 하의  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1725 (티어 4) ",
+              "qualityValue": 94,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_13.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "물리 방어력 +9966마법 방어력 +10872힘 +65639체력 +9152"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "생명 활성력 +1238"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": {
+              "forceValue": " ",
+              "maximum": 63000,
+              "minimum": 0,
+              "title": "현재 단계 재련 경험치  ",
+              "value": 0,
+              "valueType": 1
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "힘 +5880"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 받는 피해가 3%  감소합니다.  "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 보스 등급 이상 몬스터에게 공격 적중 시 '전승자의 힘'이 발동합니다. '전승자의 힘' 효과는 30 초에 1 회만 발동하며, 고정된 피해를 입힙니다.아군 공격력 강화 효과가 1.5%  증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - ‘전승자의 힘‘ 피해량이 2 배로 증가하며, 아군 공격력 강화 효과가 1.5%  추가로 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 적에게 주는 피해가 1.5%  증가하며, 아군 공격력 강화 효과가 3%  추가로 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_011": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  공격력 Lv.5 공격력 +767"
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "[하의]  추가 피해 Lv.5 추가 피해 +3.1%"
+                  }
+                },
+                "topStr": "[엘릭서] 지혜의 엘릭서  "
+              }
+            }
+          },
+          "Element_012": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "[장비 업그레이드 효과] ",
+              "Element_001": "Lv.1&nbsp;/&nbsp;Lv.2&nbsp;/&nbsp;Lv.3  진화 +&nbsp;16&nbsp;/&nbsp;18&nbsp;/&nbsp;20  "
+            }
+          },
+          "Element_013": {
+            "type": "SingleTextBox",
+            "value": "분해불가  "
+          },
+          "Element_014": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_015": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_016": {
+            "type": "SingleTextBox",
+            "value": "[장비 업그레이드] 대도시 "
+          },
+          "Element_017": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 72 / 76   |"
+          }
+        }
+      },
+      {
+        "type": "장갑",
+        "name": "+20 신념의 업화 장갑",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_20.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+20 신념의 업화 장갑 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 장갑  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1730 (티어 4) ",
+              "qualityValue": 99,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_20.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "물리 방어력 +7374마법 방어력 +7374힘 +94327체력 +5490"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "생명 활성력 +1373"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": {
+              "forceValue": " ",
+              "maximum": 72000,
+              "minimum": 0,
+              "title": "현재 단계 재련 경험치  ",
+              "value": 0,
+              "valueType": 1
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "힘 +5880"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 힘, 민첩, 지능이 4200  증가하며, 아군 공격력 강화 효과가 1%  증가합니다. "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 물리 방어력이 1800  증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - 힘, 민첩, 지능이 4200  추가로 증가하며, 아군 공격력 강화 효과가 1%  추가로 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 힘, 민첩, 지능이 4200  추가로 증가하며, 아군 공격력 강화 효과가 1%  추가로 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_011": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  공격력 Lv.5 공격력 +767"
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "[장갑]  회심 (혼돈) Lv.5 적에게 주는 피해 +1.44%마법 방어력 +3000'회심 (질서)' 효과와 함께 활성화 시, '회심' 연성 추가 효과 발동"
+                  }
+                },
+                "topStr": "[엘릭서] 지혜의 엘릭서  "
+              }
+            }
+          },
+          "Element_012": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "1단계 : 지혜의 엘릭서  레벨 합 35 공격이 치명타로 적중 시 적에게 주는 피해가 6%  추가로 증가한다. "
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "2단계 : 지혜의 엘릭서  레벨 합 40 1단계 효과가 강화되어, 공격이 치명타로 적중 시 적에게 주는 피해 증가 수치가 12% 로 적용된다. "
+                  }
+                },
+                "topStr": "연성 추가 효과 회심 (2단계) "
+              }
+            }
+          },
+          "Element_013": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "[장비 업그레이드 효과] ",
+              "Element_001": "Lv.1&nbsp;/&nbsp;Lv.2&nbsp;/&nbsp;Lv.3  진화 +&nbsp;16&nbsp;/&nbsp;18&nbsp;/&nbsp;20  "
+            }
+          },
+          "Element_014": {
+            "type": "SingleTextBox",
+            "value": "분해불가  "
+          },
+          "Element_015": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_016": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_017": {
+            "type": "SingleTextBox",
+            "value": "[장비 업그레이드] 대도시 "
+          },
+          "Element_018": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 56 / 59   |"
+          }
+        }
+      },
+      {
+        "type": "어깨",
+        "name": "+20 신념의 업화 견갑",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_21.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "+20 신념의 업화 견갑 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 어깨 방어구  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 레벨 1730 (티어 4) ",
+              "qualityValue": 90,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/bk_f_item/bk_f_item_21.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "슬레이어 전용 "
+          },
+          "Element_003": {
+            "type": "SingleTextBox",
+            "value": "캐릭터 귀속됨 "
+          },
+          "Element_004": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_005": {
+            "type": "SingleTextBox",
+            "value": "[상급 재련]  40 단계 \n30 단계 - 기본 효과 +2%\n40 단계 - 기본 효과 +3%"
+          },
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "물리 방어력 +9217마법 방어력 +8296힘 +83659체력 +7137"
+            }
+          },
+          "Element_007": null,
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "생명 활성력 +1134"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": {
+              "forceValue": " ",
+              "maximum": 72000,
+              "minimum": 0,
+              "title": "현재 단계 재련 경험치  ",
+              "value": 0,
+              "valueType": 1
+            }
+          },
+          "Element_010": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": false,
+                    "contentStr": "힘 +5880"
+                  },
+                  "Element_001": {
+                    "bPoint": false,
+                    "contentStr": "모든 장비에 적용된 총 126개 "
+                  },
+                  "Element_002": {
+                    "bPoint": false,
+                    "contentStr": "5  - 무기 공격력이 1200  증가하며, 아군 공격력 강화 효과가 1%  증가합니다. "
+                  },
+                  "Element_003": {
+                    "bPoint": false,
+                    "contentStr": "10  - 마법 방어력이 1800  증가합니다. "
+                  },
+                  "Element_004": {
+                    "bPoint": false,
+                    "contentStr": "15  - 무기 공격력이 1200  추가로 증가하며, 아군 공격력 강화 효과가 1%  추가로 증가합니다. "
+                  },
+                  "Element_005": {
+                    "bPoint": false,
+                    "contentStr": "20  - 무기 공격력이 1200  추가로 증가하며, 아군 공격력 강화 효과가 1%  추가로 증가합니다. "
+                  }
+                },
+                "topStr": "슬롯 효과 [초월]  7 단계 21"
+              }
+            }
+          },
+          "Element_011": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": true,
+                    "contentStr": "[공용]  공격력 Lv.5 공격력 +767"
+                  },
+                  "Element_001": {
+                    "bPoint": true,
+                    "contentStr": "[어깨]  보스 피해 Lv.5 보스 등급 이상 몬스터에게 주는 피해 +2.4%"
+                  }
+                },
+                "topStr": "[엘릭서] 지혜의 엘릭서  "
+              }
+            }
+          },
+          "Element_012": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "[장비 업그레이드 효과] ",
+              "Element_001": "Lv.1&nbsp;/&nbsp;Lv.2&nbsp;/&nbsp;Lv.3  진화 +&nbsp;16&nbsp;/&nbsp;18&nbsp;/&nbsp;20  "
+            }
+          },
+          "Element_013": {
+            "type": "SingleTextBox",
+            "value": "분해불가  "
+          },
+          "Element_014": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_015": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_016": {
+            "type": "SingleTextBox",
+            "value": "[장비 업그레이드] 대도시 "
+          },
+          "Element_017": {
+            "type": "ShowMeTheMoney",
+            "value": "내구도 59 / 62   |"
+          }
+        }
+      },
+      {
+        "type": "목걸이",
+        "name": "도래한 결전의 목걸이",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_215.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "도래한 결전의 목걸이 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 목걸이  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": 73,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_215.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "힘 +15661민첩 +15661 지능 +15661 체력 +3831"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "연마 효과 ",
+              "Element_001": "추가 피해 +1.60% 전투 중 생명력 회복량 +10 적에게 주는 피해 +1.20% "
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "깨달음 +13"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 [카제로스 레이드] 2막 : 부유하는 악몽의 진혼곡 - 하드 [카제로스 레이드] 3막 : 칠흑, 폭풍의 밤 "
+          }
+        }
+      },
+      {
+        "type": "귀걸이",
+        "name": "도래한 결전의 귀걸이",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_115.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "도래한 결전의 귀걸이 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 귀걸이  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": 83,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_115.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨거래 1 회 가능 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래가능"
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "힘 +12952민첩 +12952 지능 +12952 체력 +2790"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "연마 효과 ",
+              "Element_001": "무기 공격력 +1.80% 파티원 보호막 효과 +2.10% 공격력 +0.95% "
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "깨달음 +12"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 [카제로스 레이드] 2막 : 부유하는 악몽의 진혼곡 - 하드 [카제로스 레이드] 3막 : 칠흑, 폭풍의 밤 "
+          }
+        }
+      },
+      {
+        "type": "귀걸이",
+        "name": "도래한 결전의 귀걸이",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_115.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "도래한 결전의 귀걸이 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 귀걸이  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": 90,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_115.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "힘 +13660민첩 +13660 지능 +13660 체력 +2822"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "연마 효과 ",
+              "Element_001": "무기 공격력 +1.80% 파티원 회복 효과 +0.95% 공격력 +0.95% "
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "깨달음 +12"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 [카제로스 레이드] 2막 : 부유하는 악몽의 진혼곡 - 하드 [카제로스 레이드] 3막 : 칠흑, 폭풍의 밤 "
+          }
+        }
+      },
+      {
+        "type": "반지",
+        "name": "도래한 결전의 반지",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_22.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "도래한 결전의 반지 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 반지  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": 82,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_22.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨거래 1 회 가능 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래가능"
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "힘 +11098민첩 +11098 지능 +11098 체력 +2326"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "연마 효과 ",
+              "Element_001": "치명타 적중률 +1.55% 최대 생명력 +1300 치명타 피해 +2.40% "
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "깨달음 +12"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 [카제로스 레이드] 2막 : 부유하는 악몽의 진혼곡 - 하드 [카제로스 레이드] 3막 : 칠흑, 폭풍의 밤 "
+          }
+        }
+      },
+      {
+        "type": "반지",
+        "name": "도래한 결전의 반지",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_22.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "도래한 결전의 반지 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 반지  ",
+              "leftStr1": "품질 ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": 86,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_22.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "힘 +11504민첩 +11504 지능 +11504 체력 +2330"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "연마 효과 ",
+              "Element_001": "치명타 적중률 +1.55% 치명타 피해 +2.40% 아군 피해량 강화 효과 +4.50% "
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "깨달음 +12"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 [카제로스 레이드] 2막 : 부유하는 악몽의 진혼곡 - 하드 [카제로스 레이드] 3막 : 칠흑, 폭풍의 밤 "
+          }
+        }
+      },
+      {
+        "type": "어빌리티 스톤",
+        "name": "위대한 비상의 돌",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/ability/ability_246.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "위대한 비상의 돌 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 어빌리티 스톤  ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": -1,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/ability/ability_246.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1640캐릭터 귀속됨 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "기본 효과 ",
+              "Element_001": "체력 +23481"
+            }
+          },
+          "Element_005": null,
+          "Element_006": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "세공 단계 보너스 ",
+              "Element_001": "체력 +2350"
+            }
+          },
+          "Element_007": {
+            "type": "IndentStringGroup",
+            "value": {
+              "Element_000": {
+                "contentStr": {
+                  "Element_000": {
+                    "bPoint": 0,
+                    "contentStr": "[돌격대장 ] Lv.2 ",
+                    "pointType": 2
+                  },
+                  "Element_001": {
+                    "bPoint": 0,
+                    "contentStr": "[질량 증가 ] Lv.2 ",
+                    "pointType": 2
+                  },
+                  "Element_002": {
+                    "bPoint": 0,
+                    "contentStr": "[공격력 감소 ] Lv.0 ",
+                    "pointType": 2
+                  }
+                },
+                "topStr": "무작위 각인 효과 "
+              }
+            }
+          },
+          "Element_008": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_009": {
+            "type": "SingleTextBox",
+            "value": "푸른 기운과 붉은 기운이 희미하게 뒤섞여 신묘한 느낌이 난다. 자세히 보고 싶지만 더 만졌다가는 부서져 버릴 것 같다.어빌리티 스톤 세공사에게 세공 완료 후 장착 가능합니다.   "
+          },
+          "Element_010": {
+            "type": "SingleTextBox",
+            "value": "판매불가  "
+          },
+          "Element_011": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_012": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_013": {
+            "type": "SingleTextBox",
+            "value": "[쿠르잔 전선] [가디언 토벌] 4티어 [필드 보스] 쿠르잔 북부 - 세베크 아툰 그 외에 획득처가 더 존재합니다. "
+          }
+        }
+      },
+      {
+        "type": "팔찌",
+        "name": "찬란한 구원자의 팔찌",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_327.png",
+        "grade": "고대",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "찬란한 구원자의 팔찌 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "고대 팔찌  ",
+              "leftStr2": "아이템 티어 4 ",
+              "qualityValue": -1,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 6,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_327.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "거래 제한 아이템 레벨  1680캐릭터 귀속됨 "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": null,
+          "Element_005": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "팔찌 효과 ",
+              "Element_001": " 힘 +12800  신속 +83 치명 +117 추가 피해가 3.5%  증가한다.악마 및 대악마 계열 피해량이 2.5%  증가한다.적에게 주는 피해가 2%  증가한다."
+            }
+          },
+          "Element_006": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_007": {
+            "type": "SingleTextBox",
+            "value": "효과 부여 불가 "
+          },
+          "Element_008": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "아크 패시브 포인트 효과 ",
+              "Element_001": "도약 +18"
+            }
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[쿠르잔 전선] [가디언 토벌] 스콜라키아 [카제로스 레이드] 1막 : 대지를 부수는 업화의 궤적 - 하드 그 외에 획득처가 더 존재합니다. "
+          }
+        }
+      },
+      {
+        "type": "나침반",
+        "name": "특제 황금 나침반",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_311.png",
+        "grade": "전설",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "특제 황금 나침반 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "전설 나침반  ",
+              "leftStr2": "",
+              "qualityValue": -1,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 4,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_311.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "원정대 귀속됨  "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": null,
+          "Element_005": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "모든 선박의 최종 내구도 수리 비용 +15.00% 감소섬에서 이동 속도 +8.00%선박 통상 운항 속도(노트) +3.0"
+            }
+          },
+          "Element_006": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_007": {
+            "type": "SingleTextBox",
+            "value": "빛나는 황금을 이용해 만들어진 고급 나침반.수십 년을 사용해도 녹 하나 슬지 않는다고 전해진다.  "
+          },
+          "Element_008": {
+            "type": "SingleTextBox",
+            "value": "판매불가 , 파괴불가 , 분해불가 , 품질 업그레이드 불가  "
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[제작] 외로운 섬 오페르 - 바욤 "
+          }
+        }
+      },
+      {
+        "type": "부적",
+        "name": "영롱한 정령석 부적",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_307.png",
+        "grade": "전설",
+        "tooltip": {
+          "Element_000": {
+            "type": "NameTagBox",
+            "value": "영롱한 정령석 부적 "
+          },
+          "Element_001": {
+            "type": "ItemTitle",
+            "value": {
+              "bEquip": 0,
+              "itemIrochiCount": 0,
+              "leftStr0": "전설 부적  ",
+              "leftStr2": "",
+              "qualityValue": -1,
+              "rightStr0": "장착중  ",
+              "slotData": {
+                "advBookIcon": 0,
+                "battleItemTypeIcon": 0,
+                "blackListIcon": 0,
+                "cardIcon": false,
+                "friendship": 0,
+                "iconGrade": 4,
+                "iconPath": "https://cdn-lostark.game.onstove.com/efui_iconatlas/acc/acc_307.png",
+                "imagePath": "",
+                "islandIcon": 0,
+                "petBorder": 0,
+                "rtString": "",
+                "seal": false,
+                "temporary": 0,
+                "town": 0,
+                "trash": 0
+              }
+            }
+          },
+          "Element_002": {
+            "type": "SingleTextBox",
+            "value": "원정대 귀속됨  "
+          },
+          "Element_003": {
+            "type": "MultiTextBox",
+            "value": "|거래 불가 "
+          },
+          "Element_004": null,
+          "Element_005": {
+            "type": "ItemPartBox",
+            "value": {
+              "Element_000": "추가 효과 ",
+              "Element_001": "채집 속도 +3.00%내구도 미차감 확률 +4.80%모든 생활 전체 등급 재료 획득률 +22.50%"
+            }
+          },
+          "Element_006": {
+            "type": "IndentStringGroup",
+            "value": null
+          },
+          "Element_007": {
+            "type": "SingleTextBox",
+            "value": "마력이 깃든 정령석으로 만들어진 부적.가지고 있으면 정령의 가호가 깃든다고 전해진다.  "
+          },
+          "Element_008": {
+            "type": "SingleTextBox",
+            "value": "판매불가 , 파괴불가 , 분해불가 , 품질 업그레이드 불가  "
+          },
+          "Element_009": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_010": {
+            "type": "Progress",
+            "value": null
+          },
+          "Element_011": {
+            "type": "SingleTextBox",
+            "value": "[제작] 대도시 - 연금술사 "
+          }
+        }
+      }
+    ],
+    "armoryAvatars": [
+      {
+        "type": "무기 아바타",
+        "name": "연민의 영원 대검 (귀속)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_7285.png",
+        "grade": "전설",
+        "IsInner": true
+      },
+      {
+        "type": "머리 아바타",
+        "name": "연민의 영원 머리 (귀속)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_7279.png",
+        "grade": "전설",
+        "IsInner": true
+      },
+      {
+        "type": "상의 아바타",
+        "name": "연민의 영원 상의 (귀속)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_7280.png",
+        "grade": "전설",
+        "IsInner": true
+      },
+      {
+        "type": "하의 아바타",
+        "name": "연민의 영원 하의 (귀속)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_7281.png",
+        "grade": "전설",
+        "IsInner": true
+      },
+      {
+        "type": "악기 아바타",
+        "name": "청린 악기",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9384.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "얼굴1 아바타",
+        "name": "정오의 시종 얼굴1 (패스)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9759.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "얼굴2 아바타",
+        "name": "여명의 청린 얼굴2",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9314.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "무기 아바타",
+        "name": "청린의 대검",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9318.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "머리 아바타",
+        "name": "정오의 시종 머리 (패스)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9758.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "상의 아바타",
+        "name": "정오의 시종 상의 (패스)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9760.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "하의 아바타",
+        "name": "정오의 시종 하의 (패스)",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/shop_icon/shop_icon_9761.png",
+        "grade": "영웅",
+        "IsInner": false
+      },
+      {
+        "type": "이동 효과",
+        "name": "민트 조개 이동 효과",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/moving_effect/moving_effect_13.png",
+        "grade": "영웅",
+        "IsInner": false
+      }
+    ],
+    "armoryEngraving": [
+      {
+        "name": "기습의 대가",
+        "grade": "유물",
+        "level": 2
+      },
+      {
+        "name": "돌격대장",
+        "grade": "유물",
+        "level": 0
+      },
+      {
+        "name": "마나 효율 증가",
+        "grade": "유물",
+        "level": 4
+      },
+      {
+        "name": "질량 증가",
+        "grade": "유물",
+        "level": 4
+      },
+      {
+        "name": "원한",
+        "grade": "유물",
+        "level": 0
+      }
+    ],
+    "armoryCard": [
+      {
+        "slot": 0,
+        "name": "샨디",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_00_4.png",
+        "awakeCount": 5,
+        "awakeTotal": 5,
+        "grade": "전설"
+      },
+      {
+        "slot": 1,
+        "name": "일리아칸",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_01_2.png",
+        "awakeCount": 5,
+        "awakeTotal": 5,
+        "grade": "전설"
+      },
+      {
+        "slot": 2,
+        "name": "에스더 시엔",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_02_4.png",
+        "awakeCount": 5,
+        "awakeTotal": 5,
+        "grade": "전설"
+      },
+      {
+        "slot": 3,
+        "name": "부활하는 카제로스",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_04_1.png",
+        "awakeCount": 4,
+        "awakeTotal": 5,
+        "grade": "전설"
+      },
+      {
+        "slot": 4,
+        "name": "춤추는 쿠크세이튼",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_04_4.png",
+        "awakeCount": 4,
+        "awakeTotal": 5,
+        "grade": "전설"
+      },
+      {
+        "slot": 5,
+        "name": "교활한 카마인",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/card_legend/card_legend_05_1.png",
+        "awakeCount": 3,
+        "awakeTotal": 5,
+        "grade": "전설"
+      }
+    ],
+    "armoryGem": [
+      {
+        "name": "8레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_103.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 작열의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_113.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 작열의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_113.png",
+        "grade": "유물"
+      },
+      {
+        "name": "9레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_104.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_103.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 작열의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_113.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_103.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_103.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 작열의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_113.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 작열의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_113.png",
+        "grade": "유물"
+      },
+      {
+        "name": "8레벨 겁화의 보석",
+        "icon": "https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_103.png",
+        "grade": "유물"
+      }
+    ],
+    "ArkPassive": {
+      "points": [
+        {
+          "name": "진화",
+          "value": 120,
+          "description": "6랭크 21레벨"
+        },
+        {
+          "name": "깨달음",
+          "value": 101,
+          "description": "6랭크 23레벨"
+        },
+        {
+          "name": "도약",
+          "value": 70,
+          "description": "6랭크 21레벨"
+        }
+      ]
+    }
+  }
+}

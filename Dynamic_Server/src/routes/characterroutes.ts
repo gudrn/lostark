@@ -1,18 +1,70 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { fnGetCharacters } from '../controller/characterController';
+import { fnSpecCalculate } from '../utils/specsCalculate';
+import { normalizeCharacterName, isValidString } from '../utils/helpers';
+import { ValidationError } from '../utils/customError';
 
 const router = express.Router();
 
-// 쿼리 파라미터로 name을 받도록 라우터 수정 (TypeScript 적용)
+/**
+ * 캐릭터 정보 조회 API
+ * GET /character?name={캐릭터명}
+ */
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { name } = req.query;
-    if (!name || typeof name !== 'string') {
-      return res.status(400).json({ error: '캐릭터 이름이 필요합니다' });
+
+    // 캐릭터 이름 검증
+    if (!isValidString(name)) {
+      throw new ValidationError('캐릭터 이름이 필요합니다', 'name');
     }
 
-    const result = await fnGetCharacters(name);
-    res.status(200).json(result);
+    // 캐릭터 이름 정규화
+    const normalizedName = normalizeCharacterName(name);
+
+    // 캐릭터 정보 조회
+    const result = await fnGetCharacters(normalizedName);
+
+    // 스펙 계산 실행
+    await fnSpecCalculate(normalizedName);
+
+    res.status(200).json({
+      success: true,
+      data: result,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+/**
+ * 캐릭터 스펙 계산 API
+ * GET /character/specs?name={캐릭터명}
+ */
+router.get('/specs', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { name } = req.query;
+
+    // 캐릭터 이름 검증
+    if (!isValidString(name)) {
+      throw new ValidationError('캐릭터 이름이 필요합니다', 'name');
+    }
+
+    // 캐릭터 이름 정규화
+    const normalizedName = normalizeCharacterName(name);
+
+    // 스펙 계산 실행
+    const result = await fnSpecCalculate(normalizedName);
+
+    // 가격 순으로 정렬하여 반환
+    const sortedResult = result?.sort((a, b) => a.price - b.price);
+
+    res.status(200).json({
+      success: true,
+      data: sortedResult,
+      timestamp: new Date().toISOString(),
+    });
   } catch (err) {
     next(err);
   }

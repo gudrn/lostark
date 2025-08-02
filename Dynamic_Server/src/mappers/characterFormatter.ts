@@ -10,6 +10,7 @@ import {
   Passive,
   CharacterResult,
 } from './types/characterTypes';
+import { IFormattedCharacter } from '../service/types/characterServiceType';
 
 // 캐릭터 정보 매핑
 export const fnMapStats = (stats?: Stat[]): { type: string; value: number }[] =>
@@ -191,8 +192,8 @@ export const fnMapPassive = (
     : { points: [] };
 
 // 캐릭터 데이터를 포맷팅하는 함수
-export const fnFormatCharacterData = (result: CharacterResult) => ({
-  charaterimage: result.ArmoryProfile.CharacterImage,
+export const fnFormatCharacterData = (result: CharacterResult): IFormattedCharacter => ({
+  characterImage: result.ArmoryProfile.CharacterImage,
   expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
   townLevel: result.ArmoryProfile.TownLevel,
   townName: result.ArmoryProfile.TownName,

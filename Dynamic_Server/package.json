@@ -1,15 +1,26 @@
 {
-  "name": "dynamic-server",
+  "name": "lostark-dynamic-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "로스트아크 게임 데이터를 제공하는 API 서버",
+  "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit"
   },
-  "keywords": [],
+  "keywords": [
+    "lostark",
+    "api",
+    "game",
+    "typescript",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

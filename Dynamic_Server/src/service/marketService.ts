@@ -70,13 +70,13 @@ const arrMarketGemItemFromApi = async (): Promise<GemItem[]> => {
 };
 
 // 마켓 전체 아이템을 캐시 및 조회하는 함수
-export const getAllMarketItems = async (): Promise<GetAllMarketItemsResult | AllMarketItems> => {
+export const getAllMarketItems = async (): Promise<AllMarketItems> => {
   const cacheKey = 'allArrMarketItems';
   const cachedData = await marketCache.get<AllMarketItems>(cacheKey);
 
   if (cachedData) {
     // 캐시된 데이터가 있으면 반환
-    return { fromCache: true, data: cachedData };
+    return cachedData;
   }
 
   // 캐시가 없으면 API에서 데이터 조회
