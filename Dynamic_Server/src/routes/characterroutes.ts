@@ -3,6 +3,7 @@ import { fnGetCharacters } from '../controller/characterController';
 import { fnSpecCalculate } from '../utils/specsCalculate';
 import { normalizeCharacterName, isValidString } from '../utils/helpers';
 import { ValidationError } from '../utils/customError';
+import { getTodayStringKST } from '../utils/timeUtil';
 
 const router = express.Router();
 
@@ -28,7 +29,7 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     res.status(200).json({
       success: true,
       data: result,
-      timestamp: new Date().toISOString(),
+      timestamp: getTodayStringKST(),
     });
   } catch (err) {
     next(err);

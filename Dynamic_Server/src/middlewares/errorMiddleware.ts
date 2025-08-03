@@ -6,6 +6,7 @@ import {
   CacheError,
   ExternalApiError,
 } from '../utils/customError';
+import { getTodayStringKST } from '../utils/timeUtil';
 
 /**
  * 에러 응답 타입 정의
@@ -34,7 +35,7 @@ export const errorMiddleware = (err: Error, req: Request, res: Response, next: N
     stack: err.stack,
     url: req.url,
     method: req.method,
-    timestamp: new Date().toISOString(),
+    timestamp: getTodayStringKST(),
   });
 
   // 커스텀 에러인 경우
@@ -44,7 +45,7 @@ export const errorMiddleware = (err: Error, req: Request, res: Response, next: N
       error: {
         message: err.message,
         statusCode: err.statusCode,
-        timestamp: err.timestamp.toISOString(),
+        timestamp: getTodayStringKST(),
         path: req.path,
         method: req.method,
       },
@@ -84,7 +85,7 @@ export const errorMiddleware = (err: Error, req: Request, res: Response, next: N
     error: {
       message,
       statusCode,
-      timestamp: new Date().toISOString(),
+      timestamp: getTodayStringKST(),
       path: req.path,
       method: req.method,
       type: 'INTERNAL_SERVER_ERROR',
