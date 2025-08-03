@@ -13,7 +13,6 @@ const router = express.Router();
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { name } = req.query;
-    console.log(name);
 
     // 캐릭터 이름 검증
     if (!isValidString(name)) {
@@ -25,9 +24,6 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
 
     // 캐릭터 정보 조회
     const result = await fnGetCharacters(normalizedName);
-
-    // 스펙 계산 실행
-    await fnSpecCalculate(normalizedName);
 
     res.status(200).json({
       success: true,
@@ -42,7 +38,9 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
 /**
  * 캐릭터 스펙 계산 API
  * GET /character/specs?name={캐릭터명}
+ * 아직 구현 안되어서 주석처리리
  */
+/*
 router.get('/specs', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { name } = req.query;
@@ -70,5 +68,6 @@ router.get('/specs', async (req: Request, res: Response, next: NextFunction) => 
     next(err);
   }
 });
+*/
 
 export default router;

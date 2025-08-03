@@ -44,7 +44,10 @@ export const isValidObject = (value: any): value is object => {
  * @returns 정규화된 캐릭터 이름
  */
 export const normalizeCharacterName = (name: string): string => {
-  return name.trim().replace(/\s+/g, ' ');
+  return name
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/<[^>]*>/g, '');
 };
 
 /**
@@ -72,6 +75,7 @@ export const formatDate = (date: Date): string => {
   }).format(date);
 };
 
+// 이 아래부터는 현재 사용하지 않음. 나중에 사용할 수 있음.
 /**
  * 지연 함수
  * @param ms 지연할 시간 (밀리초)
