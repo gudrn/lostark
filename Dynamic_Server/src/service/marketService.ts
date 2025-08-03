@@ -16,29 +16,21 @@ import {
 
 // 유물 아이템(각인서 등) 마켓 데이터를 외부 API에서 1~4페이지까지 조회하여 정제된 배열로 반환
 const arrMarketRelicsItemFromApi = async (): Promise<RelicItem[]> => {
-  try {
-    const arrAllItems = (
-      await Promise.all(Array.from({ length: 4 }, (_, i) => fnFetchRelicMarketPage(i + 1)))
-    ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketItem) : []));
-    return arrAllItems;
-  } catch (oError: any) {
-    throw new Error(`❌ 아이템 정보 조회 실패: ${oError.message}`);
-  }
+  const arrAllItems = (
+    await Promise.all(Array.from({ length: 4 }, (_, i) => fnFetchRelicMarketPage(i + 1)))
+  ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketItem) : []));
+  return arrAllItems;
 };
 
 // 티어별 강화 재료(재련 재료) 마켓 데이터를 외부 API에서 1, 2페이지 조회 후 정제된 배열로 반환
 const objMarketTierForceProductFromApi = async (): Promise<ForceItem[]> => {
-  try {
-    const arrAllItems = (
-      await Promise.all([
-        fnFetchEnTierForceProductFromApi(4, 1),
-        fnFetchEnTierForceProductFromApi(4, 2),
-      ])
-    ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketforceItem) : []));
-    return arrAllItems;
-  } catch (oError: any) {
-    throw new Error(`❌ 강화 재료 정보 조회 실패: ${oError.message}`);
-  }
+  const arrAllItems = (
+    await Promise.all([
+      fnFetchEnTierForceProductFromApi(4, 1),
+      fnFetchEnTierForceProductFromApi(4, 2),
+    ])
+  ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketforceItem) : []));
+  return arrAllItems;
 };
 
 // 보석(작열/겁화 등) 마켓 데이터를 gemstones 배열의 각 조합별로 외부 API에서 조회하여 이름, 가격만 추출한 배열로 반환

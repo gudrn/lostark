@@ -13,11 +13,7 @@ export const redisClient: RedisClientType = createClient({
  * Redis 연결 함수
  */
 export const connectRedis = async (): Promise<void> => {
-  try {
-    await redisClient.connect();
-  } catch (err: any) {
-    throw new CacheError(`❌ Redis 연결 실패: ${err.message}`);
-  }
+  await redisClient.connect();
 };
 
 /**
@@ -53,21 +49,14 @@ export class redisCache {
    * - ttl이 10초 이하이거나 키가 없으면 null 반환
    */
   public async get<T = any>(key: string): Promise<T | null> {
-    try {
-      const fullKey = this.getKey(key);
-      const [raw, ttl] = await Promise.all([
-        this.m_client.get(fullKey),
-        this.m_client.ttl(fullKey),
-      ]);
-      if (!raw) return null;
-      // ttl이 10초 이하이거나 -2(키 없음)면 만료로 간주
-      if (ttl <= 10 || ttl === -2) {
-        return null;
-      }
-      return JSON.parse(raw) as T;
-    } catch (error: any) {
-      throw new CacheError(`[RedisCache:get] key "${key}" 에서 에러 발생: ${error.message}`);
+    const fullKey = this.getKey(key);
+    const [raw, ttl] = await Promise.all([this.m_client.get(fullKey), this.m_client.ttl(fullKey)]);
+    if (!raw) return null;
+    // ttl이 10초 이하이거나 -2(키 없음)면 만료로 간주
+    if (ttl <= 10 || ttl === -2) {
+      return null;
     }
+    return JSON.parse(raw) as T;
   }
 
   /**
@@ -75,10 +64,6 @@ export class redisCache {
    * - 에러 발생 시 errorMiddleware에서 일관 처리할 수 있도록 CacheError로 throw
    */
   public async set(key: string, value: any, ttl: number): Promise<void> {
-    try {
-      await this.m_client.set(this.getKey(key), JSON.stringify(value), { EX: ttl });
-    } catch (error: any) {
-      throw new CacheError(`[RedisCache:set] key "${key}" 에서 에러 발생: ${error.message}`);
-    }
+    await this.m_client.set(this.getKey(key), JSON.stringify(value), { EX: ttl });
   }
 }

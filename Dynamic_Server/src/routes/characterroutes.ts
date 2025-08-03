@@ -12,28 +12,24 @@ const router = express.Router();
  * GET /character?name={캐릭터명}
  */
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const { name } = req.query;
+  const { name } = req.query;
 
-    // 캐릭터 이름 검증
-    if (!isValidString(name)) {
-      throw new ValidationError('캐릭터 이름이 필요합니다', 'name');
-    }
-
-    // 캐릭터 이름 정규화
-    const normalizedName = normalizeCharacterName(name);
-
-    // 캐릭터 정보 조회
-    const result = await fnGetCharacters(normalizedName);
-
-    res.status(200).json({
-      success: true,
-      data: result,
-      timestamp: getTodayStringKST(),
-    });
-  } catch (err) {
-    next(err);
+  // 캐릭터 이름 검증
+  if (!isValidString(name)) {
+    throw new ValidationError('캐릭터 이름이 필요합니다', 'name');
   }
+
+  // 캐릭터 이름 정규화
+  const normalizedName = normalizeCharacterName(name);
+
+  // 캐릭터 정보 조회
+  const result = await fnGetCharacters(normalizedName);
+
+  res.status(200).json({
+    success: true,
+    data: result,
+    timestamp: getTodayStringKST(),
+  });
 });
 
 /**
