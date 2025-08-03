@@ -1,6 +1,7 @@
 import app from './app';
+import { serverConfig } from './config/config';
 
-const PORT: number = Number(process.env.PORT) || 3000;
+const PORT: number = Number(serverConfig.port) || 3000;
 
 /**
  * 서버 시작

@@ -26,13 +26,6 @@ export interface IRedisConfig {
  */
 export interface IServerConfig {
   port: number;
-  host: string;
-  environment: 'development' | 'production' | 'test';
-  corsOrigin?: string[];
-  rateLimit?: {
-    windowMs: number;
-    max: number;
-  };
 }
 
 /**
