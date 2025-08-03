@@ -1,19 +1,37 @@
 import { createClient, RedisClientType } from 'redis';
 import { redisConfig } from '../config/config';
-import { CustomError } from '../utils/customError';
+import { CacheError } from '../utils/customError';
 
+/**
+ * Redis 클라이언트 생성 및 연결 함수
+ */
 export const redisClient: RedisClientType = createClient({
   url: `redis://${redisConfig.redisHost}:${redisConfig.redisPort}`,
 });
 
+/**
+ * Redis 연결 함수
+ */
 export const connectRedis = async (): Promise<void> => {
-  await redisClient.connect();
+  try {
+    await redisClient.connect();
+  } catch (err: any) {
+    throw new CacheError(`❌ Redis 연결 실패: ${err.message}`);
+  }
 };
 
+/**
+ * Redis 에러 핸들링
+ * 에러 발생 시 errorMiddleware에서 일관 처리할 수 있도록 next로 전달
+ */
 redisClient.on('error', (err: Error) => {
-  throw new CustomError(`❌ Redis 클라이언트 에러`, 500);
+  console.error(`❌ Redis 클라이언트 에러: ${err.message}`);
 });
 
+/**
+ * Redis 캐시 래퍼 클래스
+ * 프리픽스 기반으로 키 관리 및 get/set 메서드 제공
+ */
 export class redisCache {
   private m_client: RedisClientType;
   private m_prefix: string;
@@ -23,10 +41,17 @@ export class redisCache {
     this.m_prefix = prefix;
   }
 
+  /**
+   * 프리픽스가 있으면 키에 붙여서 반환
+   */
   private getKey(key: string): string {
     return this.m_prefix ? `${this.m_prefix}:${key}` : key;
   }
 
+  /**
+   * 캐시에서 값 조회
+   * - ttl이 10초 이하이거나 키가 없으면 null 반환
+   */
   public async get<T = any>(key: string): Promise<T | null> {
     try {
       const fullKey = this.getKey(key);
@@ -35,22 +60,25 @@ export class redisCache {
         this.m_client.ttl(fullKey),
       ]);
       if (!raw) return null;
-      // ttl이 10초 이하이면 만료된 것으로 간주 (Redis에서 -2는 키 없음, -1은 만료 없음)
+      // ttl이 10초 이하이거나 -2(키 없음)면 만료로 간주
       if (ttl <= 10 || ttl === -2) {
         return null;
       }
       return JSON.parse(raw) as T;
-    } catch (error) {
-      console.error(`[RedisCache:get] Error with key "${key}":`, error);
-      return null;
+    } catch (error: any) {
+      throw new CacheError(`[RedisCache:get] key "${key}" 에서 에러 발생: ${error.message}`);
     }
   }
 
+  /**
+   * 캐시에 값 저장 (ttl 초 단위)
+   * - 에러 발생 시 errorMiddleware에서 일관 처리할 수 있도록 CacheError로 throw
+   */
   public async set(key: string, value: any, ttl: number): Promise<void> {
     try {
       await this.m_client.set(this.getKey(key), JSON.stringify(value), { EX: ttl });
-    } catch (error) {
-      console.error(`[RedisCache:set] Error with key "${key}":`, error);
+    } catch (error: any) {
+      throw new CacheError(`[RedisCache:set] key "${key}" 에서 에러 발생: ${error.message}`);
     }
   }
 }

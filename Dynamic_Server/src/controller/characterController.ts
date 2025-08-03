@@ -1,5 +1,6 @@
 import { getCharacter } from '../service/characterService';
 import { IGetCharacterResult } from '../service/types/characterServiceType';
+import { ApiError } from '../utils/customError';
 
 // fnGetCharacters 함수 타입 정의
 export const fnGetCharacters = async (str_characterName: string): Promise<IGetCharacterResult> => {
@@ -12,8 +13,8 @@ export const fnGetCharacters = async (str_characterName: string): Promise<IGetCh
     if ((characterResult as any).error) return characterResult;
 
     return characterResult;
-  } catch (error) {
+  } catch (error: any) {
     console.error('fnGetCharacters 오류:', error);
-    return { error: '서버 내부 오류가 발생했습니다.' };
+    throw new ApiError('서버 내부 오류가 발생했습니다.');
   }
 };

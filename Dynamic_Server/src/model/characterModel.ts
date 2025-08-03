@@ -1,15 +1,20 @@
 import { lostarkConfig } from '../config/config';
+import { ExternalApiError, ValidationError } from '../utils/customError';
 
-// 캐릭터 정보 타입 정의 (필요에 따라 수정)
+/**
+ * 캐릭터 정보 타입 정의 (API 응답에 맞게 확장 가능)
+ */
 export interface CharacterInfo {
-  // 예시 필드, 실제 API 응답에 맞게 수정 필요
   [key: string]: any;
 }
 
-// 캐릭터 정보를 API에서 가져오는 함수 (헝가리안 표기법 적용)
+/**
+ * 캐릭터 정보를 API에서 가져오는 함수
+ * 에러 처리는 catch 블록에서만 수행
+ */
 export const fnFetchCharacterFromApi = async (strCharacterName: string): Promise<CharacterInfo> => {
   try {
-    const objResponse = await fetch(
+    const response = await fetch(
       `${lostarkConfig.lostarkapiurl}/armories/characters/${encodeURIComponent(strCharacterName)}`,
       {
         method: 'GET',
@@ -20,13 +25,11 @@ export const fnFetchCharacterFromApi = async (strCharacterName: string): Promise
       },
     );
 
-    if (!objResponse.ok) {
-      throw new Error(`API 요청 실패: ${objResponse.status} ${objResponse.statusText}`);
-    }
+    const data: CharacterInfo = await response.json();
 
-    const objResult: CharacterInfo = await objResponse.json();
-    return objResult;
-  } catch (errError: any) {
-    throw new Error(`❌ 캐릭터 정보 조회 실패: ${errError.message}`);
+    return data;
+  } catch (error: any) {
+    // 모든 에러를 ValidationError로 래핑해서 throw
+    throw new ExternalApiError(`API 요청 중 에러 발생: ${error.message}`);
   }
 };

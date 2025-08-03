@@ -1,5 +1,6 @@
 import { lostarkConfig } from '../config/config';
 import { marketCode } from '../constants/data';
+import { ExternalApiError } from '../utils/customError';
 
 // 마켓 아이템 타입 정의 (간단 예시, 필요시 확장)
 export interface MarketItem {
@@ -7,7 +8,7 @@ export interface MarketItem {
 }
 
 // 유물 각인서 아이템 페이지를 가져오는 함수
-export const fnFetchRelicMarketPage = async (nPage: number): Promise<MarketItem[] | null> => {
+export const fnFetchRelicMarketPage = async (nPage: number): Promise<MarketItem[]> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
       method: 'POST',
@@ -23,20 +24,21 @@ export const fnFetchRelicMarketPage = async (nPage: number): Promise<MarketItem[
         SortCondition: 'DESC',
       }),
     });
+
     const oData = await oResponse.json();
+
     return oData.Items;
-  } catch (error) {
-    console.error('fnFetchRelicMarketPage 에러:', error);
-    //나중에 추가할 부분
-    return null;
+  } catch (error: any) {
+    // fetch 자체 에러 또는 네트워크 에러 등
+    throw new ExternalApiError(`API 요청 중 에러 발생: ${error.message}`);
   }
 };
 
 // 강화 재료 아이템 페이지를 가져오는 함수
 export const fnFetchEnTierForceProductFromApi = async (
   nTier: number,
-  nPage: number
-): Promise<MarketItem[] | null> => {
+  nPage: number,
+): Promise<MarketItem[]> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
       method: 'POST',
@@ -52,19 +54,20 @@ export const fnFetchEnTierForceProductFromApi = async (
         SortCondition: 'DESC',
       }),
     });
+
     const oData = await oResponse.json();
+
     return oData.Items;
-  } catch (error) {
-    console.error('fnFetchEnTierForceProductFromApi 에러:', error);
-    return null;
+  } catch (error: any) {
+    throw new ExternalApiError(`API 요청 중 에러 발생: ${error.message}`);
   }
 };
 
 // 보석 아이템 페이지를 가져오는 함수
 export const fnFetchEnGemstoneFromApi = async (
   sName: string,
-  grade: string
-): Promise<MarketItem[] | null> => {
+  grade: string,
+): Promise<MarketItem[]> => {
   try {
     const oResponse = await fetch(`${lostarkConfig.lostarkapiurl}/auctions/items`, {
       method: 'POST',
@@ -88,11 +91,11 @@ export const fnFetchEnGemstoneFromApi = async (
         SortCondition: 'ASC',
       }),
     });
+
     const oData = await oResponse.json();
 
     return oData.Items;
-  } catch (error) {
-    console.error('fnFetchEnGemstoneFromApi 에러:', error);
-    return null;
+  } catch (error: any) {
+    throw new ExternalApiError(`API 요청 중 에러 발생: ${error.message}`);
   }
 };

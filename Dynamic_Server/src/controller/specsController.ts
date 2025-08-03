@@ -9,10 +9,12 @@ export async function fnSpecCalanderFuntion(
     const result = await fnSpecCalculate(str_characterName);
     if (!result) throw new Error('캐릭터 정보를 찾을 수 없습니다.');
     return { name: str_characterName, data: result };
-  } catch (e) {
+  } catch (e: any) {
     return {
       name: str_characterName,
       error: e instanceof Error ? e.message : '알 수 없는 오류가 발생했습니다.',
     };
   }
 }
+
+//아직 구현 안되어서 주석처리리

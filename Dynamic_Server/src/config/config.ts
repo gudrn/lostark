@@ -13,7 +13,7 @@ export const redisConfig: IRedisConfig = {
 };
 
 export interface IMongoConfig {
-  // 필요한 설정이 있으면 여기에 추가
+  // TODO: 필요한 설정이 있으면 여기에 추가
 }
 
 export const mongoConfig: IMongoConfig = {};

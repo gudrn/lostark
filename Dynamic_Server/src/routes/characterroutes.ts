@@ -13,6 +13,7 @@ const router = express.Router();
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { name } = req.query;
+    console.log(name);
 
     // 캐릭터 이름 검증
     if (!isValidString(name)) {
