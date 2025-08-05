@@ -1,87 +1,109 @@
-import {
-  fnFetchRelicMarketPage,
-  fnFetchEnTierForceProductFromApi,
-  fnFetchEnGemstoneFromApi,
-} from '../model/marketModel';
-import { fnMapMarketItem, fnMapMarketforceItem } from '../mappers/marketFormater';
-import { gemstones } from '../constants/data';
-import { marketCache } from '../redis/instances';
-import {
-  RelicItem,
-  GemItem,
-  ForceItem,
-  AllMarketItems,
-  GetAllMarketItemsResult,
-} from './types/marketServiceTypes';
+import { lostarkConfig } from '../config/config';
+import { marketCode } from '../constants/data';
+import { ExternalApiError } from '../utils/customError';
 
-// 유물 아이템(각인서 등) 마켓 데이터를 외부 API에서 1~4페이지까지 조회하여 정제된 배열로 반환
-const arrMarketRelicsItemFromApi = async (): Promise<RelicItem[]> => {
-  const arrAllItems = (
-    await Promise.all(Array.from({ length: 4 }, (_, i) => fnFetchRelicMarketPage(i + 1)))
-  ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketItem) : []));
-  return arrAllItems;
-};
+// 마켓 아이템 타입 정의 (간단 예시, 필요시 확장)
+export interface MarketItem {
+  [key: string]: any;
+}
 
-// 티어별 강화 재료(재련 재료) 마켓 데이터를 외부 API에서 1, 2페이지 조회 후 정제된 배열로 반환
-const objMarketTierForceProductFromApi = async (): Promise<ForceItem[]> => {
-  const arrAllItems = (
-    await Promise.all([
-      fnFetchEnTierForceProductFromApi(4, 1),
-      fnFetchEnTierForceProductFromApi(4, 2),
-    ])
-  ).flatMap((arrItems: any[] | null) => (arrItems ? arrItems.map(fnMapMarketforceItem) : []));
-  return arrAllItems;
-};
-
-// 보석(작열/겁화 등) 마켓 데이터를 gemstones 배열의 각 조합별로 외부 API에서 조회하여 이름, 가격만 추출한 배열로 반환
-const arrMarketGemItemFromApi = async (): Promise<GemItem[]> => {
-  const gemParams = gemstones.flatMap(({ name, levels, grade }) =>
-    levels.map((level: number) => ({
-      gemName: `${level}레벨 ${name}`,
-      grade,
-    })),
-  );
-
-  const gemResults = await Promise.all(
-    gemParams.map(({ gemName, grade }) => fnFetchEnGemstoneFromApi(gemName, grade)),
-  );
-
-  const arrGemItems: GemItem[] = gemResults
-    .map((gemItems: any) => {
-      if (Array.isArray(gemItems) && gemItems[0]) {
-        return {
-          name: gemItems[0].Name,
-          buyPrice: gemItems[0].AuctionInfo.BuyPrice,
-        };
-      }
-      return null;
-    })
-    .filter(Boolean) as GemItem[];
-
-  return arrGemItems;
-};
-
-// 마켓 전체 아이템을 캐시 및 조회하는 함수
-export const getAllMarketItems = async (): Promise<AllMarketItems> => {
-  const cacheKey = 'allArrMarketItems';
-  const cachedData = await marketCache.get<AllMarketItems>(cacheKey);
-
-  if (cachedData) {
-    // 캐시된 데이터가 있으면 반환
-    return cachedData;
+// 유물 각인서 아이템 페이지를 가져오는 함수
+export const fnFetchRelicMarketPage = async (nPage: number): Promise<MarketItem[]> => {
+  let response;
+  try {
+    response = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+      },
+      body: JSON.stringify({
+        Sort: 'CURRENT_MIN_PRICE',
+        CategoryCode: marketCode.relicAll,
+        ItemGrade: '유물',
+        PageNo: nPage,
+        SortCondition: 'DESC',
+      }),
+    });
+  } catch (err: any) {
+    throw new ExternalApiError('마켓 아이템 페이지 조회 중 네트워크 오류', 500);
   }
 
-  // 캐시가 없으면 API에서 데이터 조회
-  const [gem, relic, force] = await Promise.all([
-    arrMarketGemItemFromApi(),
-    arrMarketRelicsItemFromApi(),
-    objMarketTierForceProductFromApi(),
-  ]);
+  if (!response.ok) throw new ExternalApiError('마켓 아이템 페이지 조회 실패', response.status);
 
-  const result: AllMarketItems = { Gem: gem, Relic: relic, Force: force };
+  const data = await response.json();
 
-  // 1시간 동안 캐시에 저장
-  await marketCache.set(cacheKey, result, 3600);
+  return data.Items;
+};
 
-  return result;
+// 강화 재료 아이템 페이지를 가져오는 함수
+export const fnFetchEnTierForceProductFromApi = async (
+  nTier: number,
+  nPage: number,
+): Promise<MarketItem[]> => {
+  let response;
+  try {
+    response = await fetch(`${lostarkConfig.lostarkapiurl}/markets/items`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+      },
+      body: JSON.stringify({
+        Sort: 'GRADE',
+        CategoryCode: marketCode.reinforce,
+        ItemTier: nTier,
+        PageNo: nPage,
+        SortCondition: 'DESC',
+      }),
+    });
+  } catch (err: any) {
+    throw new ExternalApiError('마켓 아이템 페이지 조회 중 네트워크 오류', 500);
+  }
+
+  if (!response.ok) throw new ExternalApiError('마켓 아이템 페이지 조회 실패', response.status);
+
+  const data = await response.json();
+
+  return data.Items;
+};
+
+// 보석 아이템 페이지를 가져오는 함수
+export const fnFetchEnGemstoneFromApi = async (
+  sName: string,
+  grade: string,
+): Promise<MarketItem[]> => {
+  let response;
+  try {
+    response = await fetch(`${lostarkConfig.lostarkapiurl}/auctions/items`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+      },
+      body: JSON.stringify({
+        ItemLevelMin: 0,
+        ItemLevelMax: 0,
+        ItemGradeQuality: null,
+        ItemUpgradeLevel: null,
+        ItemTradeAllowCount: null,
+        Sort: 'BUY_PRICE',
+        CategoryCode: marketCode.gem,
+        ItemTier: 4,
+        ItemGrade: `${grade}`,
+        ItemName: sName,
+        PageNo: 0,
+        SortCondition: 'ASC',
+      }),
+    });
+  } catch (err: any) {
+    throw new ExternalApiError('마켓 아이템 페이지 조회 중 네트워크 오류', 500);
+  }
+
+  if (!response.ok) throw new ExternalApiError('마켓 아이템 페이지 조회 실패', response.status);
+
+  const data = await response.json();
+
+  return data.Items;
 };

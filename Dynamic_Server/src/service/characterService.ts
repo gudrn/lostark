@@ -1,28 +1,42 @@
-import { fnFetchCharacterFromApi } from '../model/characterModel';
-import { characterCache } from '../redis/instances';
-import { fnFormatCharacterData } from '../mappers/characterFormatter';
-import {
-  IGetCharacterResult,
-  IFormattedCharacter,
-  ICharacterProfile,
-} from './types/characterServiceType';
+import { lostarkConfig } from '../config/config';
+import { ExternalApiError } from '../utils/customError';
 
-// 캐릭터 정보를 가져와 캐시하는 함수로 분리
-export const getCharacter = async (characterName: string): Promise<IGetCharacterResult> => {
-  // 1. 캐시에서 먼저 조회
-  const cacheData = await characterCache.get<IFormattedCharacter>(characterName);
+/**
+ * 캐릭터 정보 타입 정의 (API 응답에 맞게 확장 가능)
+ */
+export interface CharacterInfo {
+  [key: string]: any;
+}
 
-  if (cacheData) return { characterName: characterName, data: cacheData };
+/**
+ * 캐릭터 정보를 API에서 가져오는 함수
+ * 에러 처리는 catch 블록에서만 수행
+ *
+ * 만약 응답이 JSON이 아니거나 파싱에 실패하면 ExternalApiError를 발생시킴
+ */
+export const fnFetchCharacterFromApi = async (strCharacterName: string): Promise<CharacterInfo> => {
+  let response;
+  try {
+    response = await fetch(
+      `${lostarkConfig.lostarkapiurl}/armories/characters/${encodeURIComponent(strCharacterName)}`,
+      {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+        },
+      },
+    );
+  } catch (err) {
+    throw new ExternalApiError('캐릭터 정보 조회 중 알 수 없는 에러 발생', 500);
+  }
 
-  // 2. 외부 API에서 데이터 가져오기
-  const result: ICharacterProfile | null = await fnFetchCharacterFromApi(characterName);
+  if (!response.ok) throw new ExternalApiError('캐릭터 정보 조회 실패', response.status);
 
-  // 3. 존재하지 않거나 잘못된 응답
-  if (!result || !result.ArmoryProfile) return { error: '캐릭터를 찾을 수 없습니다.' };
-
-  // 4. 데이터 정제 및 캐시 저장
-  const character: IFormattedCharacter = fnFormatCharacterData(result as any);
-  await characterCache.set(characterName, character, 300); // 5분 TTL
-
-  return { characterName: characterName, data: character };
+  try {
+    const data: CharacterInfo = await response.json();
+    return data;
+  } catch (err) {
+    throw new ExternalApiError('캐릭터 정보 응답 파싱 실패 (유효하지 않은 JSON)', response.status);
+  }
 };

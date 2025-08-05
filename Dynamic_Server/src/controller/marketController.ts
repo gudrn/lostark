@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllMarketItems } from '../service/marketService';
+import { getAllMarketItems } from '../service/marketModel';
 import { ApiError } from '../utils/customError';
 
 // 마켓 전체 아이템을 조회하는 함수

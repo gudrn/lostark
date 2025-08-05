@@ -1,7 +1,7 @@
-import { getCharacter } from '../service/characterService';
-import { getAllMarketItems } from '../service/marketService';
-import { IGetCharacterResult } from '../service/types/characterServiceType';
-import { AllMarketItems } from '../service/types/marketServiceTypes';
+import { getCharacter } from '../model/characterModel';
+import { getAllMarketItems } from '../model/marketModel';
+import { IGetCharacterResult } from '../model/types/characterServiceType';
+import { AllMarketItems } from '../model/types/marketServiceTypes';
 import { fnCalculatingRelics } from './calculators/relicCalculator';
 import { fnCalculatingGem } from './calculators/gemCalculator';
 import {

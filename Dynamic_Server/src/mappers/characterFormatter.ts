@@ -10,7 +10,7 @@ import {
   Passive,
   CharacterResult,
 } from './types/characterTypes';
-import { IFormattedCharacter } from '../service/types/characterServiceType';
+import { IFormattedCharacter } from '../model/types/characterServiceType';
 
 // 캐릭터 정보 매핑
 export const fnMapStats = (stats?: Stat[]): { type: string; value: number }[] =>

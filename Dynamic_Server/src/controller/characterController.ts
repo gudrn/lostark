@@ -1,5 +1,5 @@
-import { getCharacter } from '../service/characterService';
-import { IGetCharacterResult } from '../service/types/characterServiceType';
+import { getCharacter } from '../service/characterModel';
+import { IGetCharacterResult } from '../model/types/characterServiceType';
 import { ApiError } from '../utils/customError';
 
 // fnGetCharacters 함수 타입 정의
