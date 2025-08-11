@@ -1,4 +1,4 @@
-import { getCharacter } from '../service/characterModel';
+import { getCharacter } from '../model/characterModel';
 import { IGetCharacterResult } from '../model/types/characterServiceType';
 import { ApiError } from '../utils/customError';
 
