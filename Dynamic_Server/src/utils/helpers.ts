@@ -3,45 +3,45 @@
  */
 
 /**
- * 문자열이 유효한지 확인
- * @param value 검사할 값
- * @returns 유효한 문자열인지 여부
+ * 문자열이 유효한지 확인합니다.
+ * @param {any} value
+ * @returns {boolean}
  */
 export const isValidString = (value: any): value is string => {
   return typeof value === 'string' && value.trim().length > 0;
 };
 
 /**
- * 숫자가 유효한지 확인
- * @param value 검사할 값
- * @returns 유효한 숫자인지 여부
+ * 숫자가 유효한지 확인합니다.
+ * @param {any} value
+ * @returns {boolean}
  */
 export const isValidNumber = (value: any): value is number => {
   return typeof value === 'number' && !isNaN(value) && isFinite(value);
 };
 
 /**
- * 배열이 유효한지 확인
- * @param value 검사할 값
- * @returns 유효한 배열인지 여부
+ * 배열이 유효한지 확인합니다.
+ * @param {any} value
+ * @returns {boolean}
  */
 export const isValidArray = (value: any): value is any[] => {
   return Array.isArray(value) && value.length > 0;
 };
 
 /**
- * 객체가 유효한지 확인
- * @param value 검사할 값
- * @returns 유효한 객체인지 여부
+ * 객체가 유효한지 확인합니다.
+ * @param {any} value
+ * @returns {boolean}
  */
 export const isValidObject = (value: any): value is object => {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 };
 
 /**
- * 캐릭터 이름 정규화
- * @param name 캐릭터 이름
- * @returns 정규화된 캐릭터 이름
+ * 캐릭터 이름을 정규화합니다.
+ * @param {string} name
+ * @returns {string}
  */
 export const normalizeCharacterName = (name: string): string => {
   return name
@@ -51,18 +51,18 @@ export const normalizeCharacterName = (name: string): string => {
 };
 
 /**
- * 가격을 포맷팅
- * @param price 가격
- * @returns 포맷팅된 가격 문자열
+ * 가격을 포맷팅합니다.
+ * @param {number} price
+ * @returns {string}
  */
 export const formatPrice = (price: number): string => {
   return new Intl.NumberFormat('ko-KR').format(price);
 };
 
 /**
- * 날짜를 포맷팅
- * @param date 날짜
- * @returns 포맷팅된 날짜 문자열
+ * 날짜를 포맷팅합니다.
+ * @param {Date} date
+ * @returns {string}
  */
 export const formatDate = (date: Date): string => {
   return new Intl.DateTimeFormat('ko-KR', {
@@ -75,22 +75,23 @@ export const formatDate = (date: Date): string => {
   }).format(date);
 };
 
-// 이 아래부터는 현재 사용하지 않음. 나중에 사용할 수 있음.
+// 아래 함수들은 현재 사용하지 않지만, 추후 사용할 수 있습니다.
+
 /**
- * 지연 함수
- * @param ms 지연할 시간 (밀리초)
- * @returns Promise
+ * 지정한 시간(ms)만큼 지연시킵니다.
+ * @param {number} ms
+ * @returns {Promise<void>}
  */
 export const delay = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 /**
- * 재시도 함수
- * @param fn 실행할 함수
- * @param maxAttempts 최대 시도 횟수
- * @param delayMs 재시도 간격 (밀리초)
- * @returns Promise
+ * 비동기 함수를 재시도합니다.
+ * @param {() => Promise<T>} fn
+ * @param {number} [maxAttempts=3]
+ * @param {number} [delayMs=1000]
+ * @returns {Promise<T>}
  */
 export const retry = async <T>(
   fn: () => Promise<T>,
@@ -117,9 +118,9 @@ export const retry = async <T>(
 };
 
 /**
- * 안전한 JSON 파싱
- * @param json JSON 문자열
- * @returns 파싱된 객체 또는 null
+ * 안전하게 JSON 문자열을 파싱합니다.
+ * @param {string} json
+ * @returns {T | null}
  */
 export const safeJsonParse = <T>(json: string): T | null => {
   try {
@@ -130,9 +131,9 @@ export const safeJsonParse = <T>(json: string): T | null => {
 };
 
 /**
- * 객체의 깊은 복사
- * @param obj 복사할 객체
- * @returns 복사된 객체
+ * 객체를 깊은 복사합니다.
+ * @param {T} obj
+ * @returns {T}
  */
 export const deepClone = <T>(obj: T): T => {
   if (obj === null || typeof obj !== 'object') {

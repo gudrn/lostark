@@ -24,10 +24,9 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
 
   // 캐릭터 정보 조회
   const result = await fnGetCharacters(normalizedName);
-
   res.status(200).json({
     success: true,
-    data: result,
+    data: result.data,
     timestamp: getTodayStringKST(),
   });
 });

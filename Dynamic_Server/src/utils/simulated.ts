@@ -5,5 +5,3 @@ export {
   type SimulationParameters,
   type SimulationResult,
 } from './data/simulationData';
-
-// 기존 시뮬레이션 관련 함수들은 여기에 유지하거나 필요에 따라 분리

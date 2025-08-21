@@ -15,9 +15,3 @@ export const redisConfig: IRedisConfig = {
   redisHost: process.env.REDIS_HOST || '',
   redisPort: process.env.REDIS_PORT || '',
 };
-
-export interface IMongoConfig {
-  // TODO: 필요한 설정이 있으면 여기에 추가
-}
-
-export const mongoConfig: IMongoConfig = {};

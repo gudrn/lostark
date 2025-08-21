@@ -1,0 +1,240 @@
+/* 공통 레이아웃 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 네비게이션 */
+.nav-bar {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-bar a:hover {
+  background: #333;
+}
+
+/* 상단 헤더 (검색, 마켓, 입찰 공통) */
+.search-header,
+.market-header,
+.bid-header {
+  background: #1f1f1f;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background: #2a2a2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 캐릭터 프로필 */
+.profile-header {
+  display: flex;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  border-radius: 10px;
+  width: 180px;
+  height: auto;
+  margin-right: 20px;
+  border: 2px solid #444;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* 공통 섹션 */
+.stats-section,
+.equipment-section,
+.accessory-section,
+.avatar-section,
+.gem-section,
+.market-section,
+.bid-section {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+/* 능력치 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.stat-item {
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* 장비, 악세서리, 아바타, 보석 공통 */
+.equipment-grid,
+.accessory-grid,
+.avatar-grid,
+.gem-grid,
+.relic-grid,
+.force-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.equipment-item,
+.accessory-item,
+.avatar-item,
+.gem-item,
+.relic-item,
+.force-item {
+  text-align: center;
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.equipment-item img,
+.accessory-item img,
+.avatar-item img,
+.gem-item img,
+.relic-item img,
+.force-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+.gem-tooltip {
+  position: fixed;
+  z-index: 10;
+  background: rgba(30, 30, 30, 0.98);
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  font-size: 15px;
+  line-height: 1.3;
+  pointer-events: none;
+  min-width: 80px;
+  max-width: 140px;
+  word-break: keep-all;
+  white-space: pre-line;
+  transition: opacity 0.12s;
+  opacity: 0.97;
+  /* 아래쪽으로 길게 늘어나지 않도록 max-height 추가 */
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* 가격 표시 */
+.price {
+  color: #0f0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 입찰 계산기 */
+.bid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bid-section label {
+  font-weight: bold;
+}
+
+.bid-section input,
+.bid-section select {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.bid-section button {
+  padding: 10px;
+  background: #2a2a2a;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.result-box {
+  margin-top: 15px;
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.party-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.party-options label {
+  cursor: pointer;
+}

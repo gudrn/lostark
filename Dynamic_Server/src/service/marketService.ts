@@ -107,3 +107,44 @@ export const fnFetchEnGemstoneFromApi = async (
 
   return data.Items;
 };
+/*
+// 장신구(악세서리) 아이템 페이지를 가져오는 함수
+export const fnFetchEnAccessoryFromApi = async (
+  sName: string,
+  grade: string,
+): Promise<MarketItem[]> => {
+  let response;
+  try {
+    response = await fetch(`${lostarkConfig.lostarkapiurl}/auctions/items`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${lostarkConfig.lostarkapikey}`,
+      },
+      body: JSON.stringify({
+        ItemLevelMin: 0,
+        ItemLevelMax: 0,
+        ItemGradeQuality: null,
+        ItemUpgradeLevel: null,
+        ItemTradeAllowCount: null,
+        Sort: 'BUY_PRICE',
+        CategoryCode: marketCode.accessory, // 장신구 카테고리 코드 사용
+        ItemTier: 4,
+        ItemGrade: `${grade}`,
+        ItemName: sName,
+        PageNo: 0,
+        SortCondition: 'ASC',
+      }),
+    });
+  } catch (err: any) {
+    throw new ExternalApiError('마켓 장신구 페이지 조회 중 네트워크 오류', 500);
+  }
+
+  if (!response.ok) throw new ExternalApiError('마켓 장신구 페이지 조회 실패', response.status);
+
+  const data = await response.json();
+
+  return data.Items;
+};
+*/

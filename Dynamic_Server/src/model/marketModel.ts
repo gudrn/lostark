@@ -6,13 +6,7 @@ import {
 import { fnMapMarketItem, fnMapMarketforceItem } from '../mappers/marketFormater';
 import { gemstones } from '../constants/data';
 import { marketCache } from '../redis/instances';
-import {
-  RelicItem,
-  GemItem,
-  ForceItem,
-  AllMarketItems,
-  GetAllMarketItemsResult,
-} from './types/marketServiceTypes';
+import { RelicItem, GemItem, ForceItem, AllMarketItems } from './types/marketServiceTypes';
 
 // 유물 아이템(각인서 등) 마켓 데이터를 외부 API에서 1~4페이지까지 조회하여 정제된 배열로 반환
 const arrMarketRelicsItemFromApi = async (): Promise<RelicItem[]> => {

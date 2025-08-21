@@ -1,6 +1,5 @@
 import { createClient, RedisClientType } from 'redis';
 import { redisConfig } from '../config/config';
-import { CacheError } from '../utils/customError';
 
 /**
  * Redis 클라이언트 생성 및 연결 함수

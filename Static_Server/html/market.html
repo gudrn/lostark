@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>마켓 아이템</title>
+    <link rel="stylesheet" href="./static/style.css" />
+  </head>
+  <body>
+    <header class="market-header">
+      <nav class="nav-bar">
+        <a href="index.html">캐릭터 검색</a>
+        <a href="market.html">마켓</a>
+        <a href="bid.html">입찰 계산기</a>
+      </nav>
+      <h1>마켓 아이템</h1>
+    </header>
+
+    <main class="container">
+      <section class="market-section">
+        <h2>겁화 보석</h2>
+        <div class="gem-grid" id="geobhwaGemList"></div>
+      </section>
+      <section class="market-section">
+        <h2>작열 보석</h2>
+        <div class="gem-grid" id="jakyeolGemList"></div>
+      </section>
+
+      <section class="market-section">
+        <h2>각인서</h2>
+        <div class="relic-grid" id="relicList"></div>
+      </section>
+
+      <section class="market-section">
+        <h2>재료</h2>
+        <div class="force-grid" id="forceList"></div>
+      </section>
+    </main>
+
+    <script src="./static/market.js"></script>
+  </body>
+</html>

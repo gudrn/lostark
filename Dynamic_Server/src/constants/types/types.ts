@@ -95,3 +95,63 @@ export interface ExceptedRelic {
   itemIcon: string;
   itemCurrentMinPrice: number;
 }
+
+// 등급 조합 매핑 인터페이스
+export interface GradeMapping {
+  [key: string]: [string, string];
+}
+
+// 옵션 조합 타입 인터페이스
+export interface OptionCombinationTypes {
+  [key: string]: string;
+}
+
+// 장신구 옵션 인터페이스
+export interface AccessoryOption {
+  FirstOption: number;
+  SecondOption: number;
+  Description: string;
+}
+export interface AccessoryOptionsByType {
+  NECKLACE: AccessoryOption[];
+  EARRING: AccessoryOption[];
+  RING: AccessoryOption[];
+}
+export interface AccessoryOptions {
+  DEALER: AccessoryOptionsByType;
+  SUPPORTER: AccessoryOptionsByType;
+}
+
+// 옵션 등급별 값 정의 인터페이스
+export interface OptionValueDetail {
+  MinValue: number;
+  MaxValue: number;
+}
+export interface OptionGradeValues {
+  HIGH: OptionValueDetail;
+  MEDIUM: OptionValueDetail;
+  LOW: OptionValueDetail;
+}
+export interface OptionValuesByType {
+  [optionCode: number]: OptionGradeValues;
+}
+export interface OptionValues {
+  NECKLACE: OptionValuesByType;
+  EARRING: OptionValuesByType;
+  RING: OptionValuesByType;
+}
+
+// 등급 타입 매핑 인터페이스
+export interface GradeTypeMapping {
+  [key: string]: string;
+}
+
+// 클래스 타입 매핑 인터페이스
+export interface ClassTypeMapping {
+  [key: string]: string;
+}
+
+// 장신구 타입 매핑 인터페이스
+export interface AccessoryTypeMapping {
+  [key: string]: string;
+}

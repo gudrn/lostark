@@ -1,4 +1,6 @@
-// 각 파트별로 분리된 매핑 함수들
+/**
+ * 각 파트별로 분리된 매핑 함수들
+ */
 import {
   Equipment,
   Stat,
@@ -12,14 +14,22 @@ import {
 } from './types/characterTypes';
 import { IFormattedCharacter } from '../model/types/characterServiceType';
 
-// 캐릭터 정보 매핑
+/**
+ * 스탯 배열을 { type, value } 형태로 매핑합니다.
+ * @param {Stat[]} stats
+ * @returns {Array}
+ */
 export const fnMapStats = (stats?: Stat[]): { type: string; value: number }[] =>
   stats?.map((stat) => ({
     type: stat.Type,
     value: stat.Value,
   })) ?? [];
 
-// 장비 정보 매핑
+/**
+ * 장비 정보를 간단히 매핑합니다.
+ * @param {Equipment[]} equipments
+ * @returns {Array}
+ */
 export const fnMapEquipmentSimple = (
   equipments?: Equipment[],
 ): { equipmentName: string; equipmentLevel?: number }[] =>
@@ -28,17 +38,18 @@ export const fnMapEquipmentSimple = (
     equipmentLevel: equipment.Level,
   })) ?? [];
 
-// HTML 태그 제거 함수
+/**
+ * HTML 태그를 제거합니다.
+ * @param {any} value
+ * @returns {any}
+ */
 const removeHtmlTags = (value: any): any => {
-  if (typeof value === 'string') {
-    // </FONT>을 \n으로 바꾸고, 나머지 HTML 태그 제거
-    return value.replace(/<\/FONT>/gi, ' ').replace(/<[^>]*>/g, '');
-  }
+  if (typeof value === 'string') return value.replace(/<\/FONT>/gi, ' ').replace(/<[^>]*>/g, '');
+
   if (Array.isArray(value)) {
     return value.map(removeHtmlTags);
   }
   if (typeof value === 'object' && value !== null) {
-    // 객체라면 모든 key에 대해 재귀적으로 처리
     const result: any = {};
     for (const key in value) {
       result[key] = removeHtmlTags(value[key]);
@@ -48,15 +59,16 @@ const removeHtmlTags = (value: any): any => {
   return value;
 };
 
-// Tooltip 파싱 함수 수정
+/**
+ * Tooltip을 파싱합니다.
+ * @param {string|object} tooltip
+ * @returns {any}
+ */
 const parseTooltip = (tooltip: string | object): any => {
   try {
-    // tooltip이 문자열이면 JSON 파싱, 아니면 그대로 사용
     const tooltipObj = typeof tooltip === 'string' ? JSON.parse(tooltip) : tooltip;
-    // HTML 태그 제거 함수 적용
     return removeHtmlTags(tooltipObj);
   } catch (e) {
-    // 파싱 실패 시 문자열이면 HTML 태그만 제거, 아니면 원본 반환
     if (typeof tooltip === 'string') {
       return removeHtmlTags(tooltip);
     }
@@ -64,6 +76,11 @@ const parseTooltip = (tooltip: string | object): any => {
   }
 };
 
+/**
+ * 장비 상세 정보를 매핑합니다.
+ * @param {Equipment[]} equipments
+ * @returns {Array}
+ */
 export const fnMapEquipmentDetail = (
   equipments?: Equipment[],
 ): {
@@ -81,7 +98,11 @@ export const fnMapEquipmentDetail = (
     tooltip: equipment.Tooltip ? parseTooltip(equipment.Tooltip) : undefined,
   })) ?? [];
 
-// 아바타 정보 매핑
+/**
+ * 아바타 정보를 매핑합니다.
+ * @param {Avatar[]} avatars
+ * @returns {Array}
+ */
 export const fnMapAvatars = (
   avatars?: Avatar[],
 ): {
@@ -99,7 +120,11 @@ export const fnMapAvatars = (
     IsInner: avatar.IsInner,
   })) ?? [];
 
-// 각인 정보 매핑
+/**
+ * 각인 정보를 매핑합니다.
+ * @param {Engraving} engraving
+ * @returns {Array}
+ */
 export const fnMapEngraving = (
   engraving?: Engraving,
 ): {
@@ -115,7 +140,11 @@ export const fnMapEngraving = (
       }))
     : [];
 
-// 카드 정보 매핑
+/**
+ * 카드 정보를 매핑합니다.
+ * @param {Card[]} card
+ * @returns {Array}
+ */
 export const fnMapCardSimple = (
   card?: Card[],
 ): {
@@ -131,7 +160,11 @@ export const fnMapCardSimple = (
     grade: card.Grade,
   })) ?? [];
 
-// 카드 상세 정보 매핑
+/**
+ * 카드 상세 정보를 매핑합니다.
+ * @param {CardSet} card
+ * @returns {Array}
+ */
 export const fnMapCardDetail = (
   card?: CardSet,
 ): {
@@ -153,7 +186,11 @@ export const fnMapCardDetail = (
       }))
     : [];
 
-// 보석 정보 매핑
+/**
+ * 보석 정보를 매핑합니다.
+ * @param {GemSet} gem
+ * @returns {Array}
+ */
 export const fnMapGems = (
   gem?: GemSet,
 ): {
@@ -171,7 +208,11 @@ export const fnMapGems = (
       }))
     : [];
 
-// 패시브 정보 매핑
+/**
+ * 패시브 정보를 매핑합니다.
+ * @param {Passive} passive
+ * @returns {Object}
+ */
 export const fnMapPassive = (
   passive?: Passive,
 ): {
@@ -191,7 +232,11 @@ export const fnMapPassive = (
       }
     : { points: [] };
 
-// 캐릭터 데이터를 포맷팅하는 함수
+/**
+ * 캐릭터 데이터를 포맷팅합니다.
+ * @param {CharacterResult} result
+ * @returns {IFormattedCharacter}
+ */
 export const fnFormatCharacterData = (result: CharacterResult): IFormattedCharacter => ({
   characterImage: result.ArmoryProfile.CharacterImage,
   expeditionLevel: result.ArmoryProfile.ExpeditionLevel,
